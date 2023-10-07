@@ -31,6 +31,7 @@
 @media (max-width: 990px) {
 	.copyright {
 		margin-left: 0;
+		font-size: 0.75rem !important;
 	}
 
 	.footer-container {

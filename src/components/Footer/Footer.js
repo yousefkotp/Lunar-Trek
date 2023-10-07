@@ -39,7 +39,8 @@ const Footer = () => {
 						target="_blank"
 						rel="noreferrer">
 						Moon LRO LOLA Shaded Relief (ESA)
-					</a>{" "}
+					</a>
+					.
 				</p>
 				<p className={styles["copyright"]}>
 					Seismic data gathered from{" "}
@@ -48,7 +49,8 @@ const Footer = () => {
 						target="_blank"
 						rel="noreferrer">
 						Apollo Seismic Event Catalog (NASA's PDS)
-					</a>{" "}
+					</a>
+					.
 				</p>
 				<p className={styles["copyright"]}>
 					Virtual Experience developed with{" "}
@@ -58,6 +60,7 @@ const Footer = () => {
 						rel="noreferrer">
 						Unreal Engine 5
 					</a>
+					.
 				</p>
 				<p className={styles["copyright"]}>
 					Developed with{" "}
