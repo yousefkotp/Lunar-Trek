@@ -1,6 +1,6 @@
 {
 	"name": "lunar-trek",
-	"homepage": "https://mohammadhelaly.github.io/Lunar-Seismic-Event-Visualization/lunar-trek",
+	"homepage": "https://mohammadhelaly.github.io/Lunar-Seismic-Event-Visualization/lunar-trek/build",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
