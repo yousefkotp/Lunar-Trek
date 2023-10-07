@@ -1,0 +1,26 @@
+const seaAndOceanData = [
+	["Mare Tranquillitatis", 10, 23.43],
+	["Mare Imbrium", 38.28, -20],
+	["Mare Frigoris", 60.5, 1.5],
+	["Mare Vaporum", 15, 3.6],
+	["Mare Insularum", 8.5, -30.9],
+	["Mare Serenitatis", 30, 12.5],
+	["Mare Crisium", 20, 55.1],
+	["Mare Nubium", -18.3, -19.6],
+	["Mare Nectaris", -10.2, 30.6],
+	["Mare Fecunditatis", -0.8, 45.3],
+	["Mare Humorum", -20.4, -43.6],
+	["Mare Cognitum", -7.5, -26.3],
+	["Mare Australe", -39.5, 81.4],
+	["Mare Marginis", 17.5, 86.2],
+	["Mare Smythii", -1.8, 87.7],
+	["Mare Orientale", -19.4, -95.5],
+	// ["Mare Undarum", 14.1, 104.3],
+	// ["Mare Spumans", 15.5, 112.5],
+	// ["Mare Anguis", 19.5, 120.5],
+	["Mare Moscoviense", 27.5, 147.5],
+	["Mare Humboldtianum", 59.6, 75.8],
+	["Oceanus Procellarum", 16.4, -59.4],
+];
+
+export default seaAndOceanData;
