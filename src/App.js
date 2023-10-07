@@ -18,11 +18,11 @@ const App = () => {
 				<Routes key={location.pathname} location={location}>
 					<Route path="/" element={<LandingPage />} />
 					<Route
-						path="/globe-exploration"
+						path="/lunar-trek/globe-exploration"
 						element={<GlobeExplorationPage />}
 					/>
 					<Route
-						path="/unreal-engine-exploration"
+						path="/lunar-trek/unreal-engine-exploration"
 						element={<UnrealEngineExplorationPage />}
 					/>
 					<Route path="*" element={<LandingPage />} />
