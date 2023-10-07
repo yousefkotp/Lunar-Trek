@@ -120,6 +120,11 @@
 
 @media (max-width: 500px) {
 	.chart {
-		display: none;
+		width: 40%;
+		height: 200px;
+	}
+
+	.chart-container {
+		height: 70%;
 	}
 }

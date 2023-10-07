@@ -8,6 +8,9 @@ const Camera = () => {
 
 	const camera = useRef();
 
+	const maxDistance = window.innerWidth <= 768 ? 20.25 : 6.25;
+	const defaultDistance = window.innerWidth <= 768 ? -12.5 : -6.25;
+
 	useFrame(() => {
 		if (
 			dataContext.seasAndOceans ||
@@ -41,14 +44,14 @@ const Camera = () => {
 			<OrbitControls
 				enableZoom={true}
 				minDistance={3.5}
-				maxDistance={6.25}
+				maxDistance={maxDistance}
 				enablePan={true}
 				autoRotate={dataContext.viewTimeSeriesData.on}
 			/>
 			<PerspectiveCamera
 				ref={camera}
 				makeDefault
-				position={[-6.25, -2.25, 3.5]}
+				position={[defaultDistance, -2.25, 3.5]}
 			/>
 		</>
 	);

@@ -192,11 +192,7 @@
 		bottom: 10%;
 		width: 80%;
 		left: 10%;
-		border: 2px solid #e9e6e6;
-		border-radius: 0 !important;
-		outline: none;
-		background-color: rgba(124, 124, 124, 0.486);
-		padding: 10px 25px 10px 25px;
+		padding: 15px 30px 15px 30px;
 	}
 
 	.checkboxes label {
