@@ -1,12 +1,9 @@
-.home-container {
-	position: absolute;
+.parent-container {
+	position: relative;
 	width: 100vw;
 	min-height: 100vh;
 	overflow: hidden;
 	background-color: rgba(0, 0, 0, 0);
-	padding: 3.5vw;
-	text-align: center;
-	z-index: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -21,16 +18,28 @@
 	opacity: 1;
 }
 
+.overlay-container {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 3.5vw;
+	text-align: center;
+	z-index: 1;
+}
+
 @media (max-width: 990px) {
-	.home-container {
+	.overlay-container {
+		top: 49%;
+	}
+
+	.parent-container {
 		min-height: 675px !important;
-		top: 6%;
+		top: 0;
 		bottom: 0;
 	}
 }
 
 @media (min-width: 2168px) {
-	.home-container {
+	.parent-container {
 		min-height: 920px !important;
 	}
 }
