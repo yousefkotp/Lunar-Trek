@@ -16,7 +16,7 @@ const App = () => {
 			<ScrollToTop />
 			<AnimatePresence mode="wait">
 				<Routes key={location.pathname} location={location}>
-					<Route path="/" element={<LandingPage />} />
+					<Route path="/lunar-trek" element={<LandingPage />} />
 					<Route
 						path="/lunar-trek/globe-exploration"
 						element={<GlobeExplorationPage />}
