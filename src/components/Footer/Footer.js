@@ -43,7 +43,7 @@ const Footer = () => {
 					by ESA.
 				</p>
 				<p className={styles["copyright"]}>
-					Virtual experience developed with{" "}
+					Virtual Experience developed with{" "}
 					<a
 						href="https://www.unrealengine.com/en-US/"
 						target="_blank"
@@ -64,7 +64,7 @@ const Footer = () => {
 				<p className={styles["source-code-link"]}>
 					<Icon
 						link={true}
-						to="https://www.github.com/MohammadHelaly/Lunar-Seismic-Event-Visualization"
+						to="https://www.github.com/MohammadHelaly/lunar-trek"
 						src={githubIcon}
 						alt="GitHub"
 					/>
