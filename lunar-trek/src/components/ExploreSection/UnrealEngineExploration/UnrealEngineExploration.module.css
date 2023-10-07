@@ -1,0 +1,30 @@
+.unreal-explore-intro-1 {
+	opacity: 0;
+	transform: translateX(-70%);
+	transition: all 1.5s;
+}
+
+.unreal-explore-intro-2 {
+	opacity: 0;
+	transform: translateX(70%);
+	transition: all 1.5s;
+}
+
+.animate-unreal-intro {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.unreal-explore-container {
+	position: relative;
+	display: grid;
+	z-index: 1;
+	margin: 0 10% 0 10%;
+	overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+	.unreal-exploration-box:first-child {
+		margin-top: 30%;
+	}
+}

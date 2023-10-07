@@ -43,29 +43,40 @@ const NavBar = () => {
 					className="collapse navbar-collapse"
 					id="navbarSupportedContent">
 					<ul className="navbar-nav ms-auto text-center">
-						<>
+						{currentPath === "/" ? (
+							<>
+								<li className="nav-item">
+									<a
+										className="nav-link custom-link text-light"
+										href="#explore">
+										Explore Luna
+									</a>
+								</li>
+								<li className="nav-item">
+									<a
+										className="nav-link custom-link text-light"
+										href="#about">
+										About
+									</a>
+								</li>
+								<li className="nav-item">
+									<a
+										className="nav-link custom-link text-light"
+										href="#contact">
+										Contact
+									</a>
+								</li>
+							</>
+						) : currentPath === "/unreal-engine-exploration" ? (
 							<li className="nav-item">
-								<a
+								<NavLink
 									className="nav-link custom-link text-light"
-									href="#explore">
-									Explore Luna
-								</a>
+									to="/"
+									exact>
+									Back to Home
+								</NavLink>
 							</li>
-							<li className="nav-item">
-								<a
-									className="nav-link custom-link text-light"
-									href="#about">
-									About
-								</a>
-							</li>
-							<li className="nav-item">
-								<a
-									className="nav-link custom-link text-light"
-									href="#contact">
-									Contact
-								</a>
-							</li>
-						</>
+						) : null}
 					</ul>
 				</div>
 			</div>
