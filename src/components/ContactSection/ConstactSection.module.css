@@ -29,6 +29,7 @@
 }
 
 .contact-paragraph {
+	color: #11283f !important;
 	opacity: 0;
 	transition: all 2s ease;
 }

@@ -37,13 +37,13 @@
 	margin-bottom: 0px;
 	position: relative;
 	bottom: 10px;
-	transition: all 1s ease;
+	transition: all 1s ease !important;
 }
 
 .contact-icon {
 	margin-right: 10px;
 	position: relative;
-	transition: all 1s ease;
+	transition: all 1s ease !important;
 }
 
 .contact-information:hover {

@@ -16,6 +16,7 @@
 	opacity: 0;
 	transform: translateX(70%);
 	transition: all 1.5s;
+	color: #11283f !important;
 }
 
 .animate-intro {

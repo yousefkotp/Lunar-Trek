@@ -124,6 +124,7 @@
 .exploration-menu option {
 	text-align: center;
 	text-justify: distribute;
+	color: #11283f;
 }
 
 .hide:nth-child(2) {

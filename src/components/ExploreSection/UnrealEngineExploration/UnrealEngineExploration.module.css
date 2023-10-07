@@ -8,6 +8,7 @@
 	opacity: 0;
 	transform: translateX(70%);
 	transition: all 1.5s;
+	color: #11283f !important;
 }
 
 .animate-unreal-intro {
@@ -70,6 +71,7 @@
 .disclaimer {
 	margin-top: 15px;
 	text-align: center;
+	color: #11283f !important;
 }
 
 @media (max-width: 990px) {

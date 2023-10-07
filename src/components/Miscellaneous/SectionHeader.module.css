@@ -20,7 +20,7 @@
 }
 
 .dark-title-text {
-	color: #212529;
+	color: #11283f;
 	overflow: hidden;
 	opacity: 0;
 	transition: all 1s !important;
@@ -43,7 +43,7 @@
 }
 
 .dark-subtitle-text {
-	color: #212529;
+	color: #11283f;
 	opacity: 0;
 	transition: all 3s;
 	/* font-size: 1.5rem !important; */
