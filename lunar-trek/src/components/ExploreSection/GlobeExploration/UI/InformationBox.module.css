@@ -1,0 +1,63 @@
+.information-box {
+	position: absolute;
+	top: 15%;
+	right: 15px;
+	background-color: rgba(124, 124, 124, 0.486);
+	width: 25%;
+	height: fit-content;
+	margin: 2%;
+	opacity: 0;
+	transform: translateY(50%);
+	transition: all 1s ease;
+	border: 2px solid #e9e6e6;
+	cursor: default !important;
+}
+
+.information-box h2 {
+	margin: 10px 0 0 15px;
+	font-weight: 300 !important;
+	font-size: 2.5rem;
+	transition: all 1s ease;
+}
+
+.information-box p {
+	margin: 10px 0 0 20px;
+	font-weight: 300 !important;
+	font-size: 1.25rem;
+	transition: all 1s ease;
+}
+
+.information-box p:last-child {
+	margin-bottom: 10px;
+}
+
+.information-box hr {
+	width: 95%;
+	margin: 0 auto;
+	transition: all 1s ease;
+}
+
+.animate {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+	z-index: 10;
+	cursor: auto !important;
+}
+
+@media (max-width: 768px) {
+	.information-box {
+		width: 30%;
+		right: 10px;
+		top: 19%;
+	}
+
+	.information-box h2 {
+		font-size: 0.8rem;
+		margin: 8.5px 0 0 7.5px;
+	}
+
+	.information-box p {
+		font-size: 0.5rem;
+		margin: 7.5px 0 0 7.5px;
+	}
+}

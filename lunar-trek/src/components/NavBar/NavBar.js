@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import styles from "./NavBar.module.css";
 import { NavLink, useLocation } from "react-router-dom";
+import DataContext from "../../store/data-context";
 
 const NavBar = () => {
 	const [scrolled, setScrolled] = useState(false);
@@ -20,6 +21,33 @@ const NavBar = () => {
 			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
+
+	const dataContext = useContext(DataContext);
+
+	const resetContextHandler = () => {
+		dataContext.reset();
+	};
+
+	const viewTimeSeriesDataHandler = () => {
+		dataContext.setSelectedQuake(null);
+		dataContext.setViewTimeSeriesData({
+			on: true,
+			shallowMoonquakes: true,
+			deepMoonquakes: true,
+			meteoriteImpacts: true,
+			artificialImpacts: true,
+		});
+	};
+
+	const freeExplorationHandler = () => {
+		dataContext.setViewTimeSeriesData({
+			on: false,
+			shallowMoonquakes: false,
+			deepMoonquakes: false,
+			meteoriteImpacts: false,
+			artificialImpacts: false,
+		});
+	};
 
 	return (
 		<nav
@@ -67,12 +95,43 @@ const NavBar = () => {
 									</a>
 								</li>
 							</>
+						) : currentPath === "/globe-exploration" ? (
+							<>
+								<li className="nav-item">
+									<NavLink
+										className="nav-link custom-link text-light"
+										to="/globe-exploration"
+										onClick={freeExplorationHandler}
+										exact="true">
+										Free Exploration
+									</NavLink>
+								</li>
+								<li className="nav-item">
+									<NavLink
+										className="nav-link custom-link text-light"
+										to="/globe-exploration"
+										onClick={viewTimeSeriesDataHandler}
+										exact="true">
+										Time Series Analysis
+									</NavLink>
+								</li>
+								<li className="nav-item">
+									<NavLink
+										className="nav-link custom-link text-light"
+										onClick={resetContextHandler}
+										to="/"
+										exact="true">
+										Back to Home
+									</NavLink>
+								</li>
+							</>
 						) : currentPath === "/unreal-engine-exploration" ? (
 							<li className="nav-item">
 								<NavLink
 									className="nav-link custom-link text-light"
 									to="/"
-									exact>
+									onClick={resetContextHandler}
+									exact="true">
 									Back to Home
 								</NavLink>
 							</li>

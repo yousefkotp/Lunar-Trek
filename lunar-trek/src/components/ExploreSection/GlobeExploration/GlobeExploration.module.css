@@ -1,0 +1,21 @@
+.exploration-container {
+	top: 0;
+	bottom: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(6, 6, 12); /* (9,9,18) */ /* (9,9,15) */
+	position: absolute;
+	overflow: hidden;
+	display: grid; /* check later */
+}
+
+.space {
+	margin-top: -10%;
+	margin-bottom: -10%;
+}
+
+/* @media (max-width: 768px) {
+	.exploration-container {
+		height: 45vh;
+	}
+} */

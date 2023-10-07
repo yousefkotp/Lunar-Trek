@@ -13,12 +13,6 @@
 	background-color: white !important;
 }
 
-.space {
-	margin-top: -10%;
-	margin-bottom: -10%;
-}
-
-/* MEDIA QUERIES */
 @media (max-width: 990px) {
 	.custom-container {
 		padding: 1% 0 10% 0 !important;

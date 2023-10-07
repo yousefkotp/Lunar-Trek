@@ -32,9 +32,10 @@ const ContactSection = () => {
 						<hr />
 
 						<div className={`${styles["contacts"]}`}>
-							{contactData.map((contact) => {
+							{contactData.map((contact, index) => {
 								return (
 									<ContactInformation
+										key={"CI - " + index}
 										name={contact.name}
 										photo={contact.photo}
 										gmailLink={contact.gmailLink}
