@@ -1,8 +1,14 @@
 import "./App.css";
 import Background from "./components/Background/Background";
+import HomeSection from "./components/HomeSection/HomeSection";
 
-function App() {
-	return <Background />;
-}
+const App = () => {
+	return (
+		<>
+			<Background />
+			<HomeSection />
+		</>
+	);
+};
 
 export default App;
