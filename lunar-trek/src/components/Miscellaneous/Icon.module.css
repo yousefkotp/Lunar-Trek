@@ -1,0 +1,29 @@
+.white-icon {
+	filter: brightness(100%);
+	filter: invert(100%);
+	height: 30px;
+	width: 30px;
+	transition: transform 0.5s ease;
+}
+
+.white-icon:active,
+.white-icon:hover {
+	opacity: 0.45;
+	transform: translateY(-5px);
+}
+
+.icon-link {
+	margin-right: 17.5px;
+	margin-top: 25px;
+}
+
+.gm-icon {
+	height: 50px;
+	width: 50px;
+}
+
+@media (max-width: 576px) {
+	.icon-link {
+		margin-right: 5px;
+	}
+}
