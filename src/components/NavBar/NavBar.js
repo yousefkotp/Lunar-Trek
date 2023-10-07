@@ -71,33 +71,7 @@ const NavBar = () => {
 					className="collapse navbar-collapse"
 					id="navbarSupportedContent">
 					<ul className="navbar-nav ms-auto text-center">
-						{currentPath === "/lunar-trek" ||
-						currentPath === "/" ||
-						currentPath === "/lunar-trek/" ? (
-							<>
-								<li className="nav-item">
-									<a
-										className="nav-link custom-link text-light"
-										href="#explore">
-										Explore Luna
-									</a>
-								</li>
-								<li className="nav-item">
-									<a
-										className="nav-link custom-link text-light"
-										href="#about">
-										About
-									</a>
-								</li>
-								<li className="nav-item">
-									<a
-										className="nav-link custom-link text-light"
-										href="#contact">
-										Contact
-									</a>
-								</li>
-							</>
-						) : currentPath === "/lunar-trek/globe-exploration" ? (
+						{currentPath === "/lunar-trek/globe-exploration" ? (
 							<>
 								<li className="nav-item">
 									<NavLink
@@ -135,7 +109,31 @@ const NavBar = () => {
 									Back to Home
 								</NavLink>
 							</li>
-						) : null}
+						) : (
+							<>
+								<li className="nav-item">
+									<a
+										className="nav-link custom-link text-light"
+										href="#explore">
+										Explore Luna
+									</a>
+								</li>
+								<li className="nav-item">
+									<a
+										className="nav-link custom-link text-light"
+										href="#about">
+										About
+									</a>
+								</li>
+								<li className="nav-item">
+									<a
+										className="nav-link custom-link text-light"
+										href="#contact">
+										Contact
+									</a>
+								</li>
+							</>
+						)}
 					</ul>
 				</div>
 			</div>
