@@ -1,22 +1,17 @@
 import "./App.css";
-import AboutSection from "./components/AboutSection/AboutSection";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Background from "./components/Background/Background";
-import ContactSection from "./components/ContactSection/ContactSection";
-import ExploreSection from "./components/ExploreSection/ExploreSection";
-import Footer from "./components/Footer/Footer";
-import HomeSection from "./components/HomeSection/HomeSection";
-import NavBar from "./components/NavBar/NavBar";
+import LandingPage from "./pages/LandingPage";
 
 const App = () => {
+	const location = useLocation();
 	return (
 		<>
 			<Background />
-			<NavBar />
-			<HomeSection />
-			<ExploreSection />
-			<AboutSection />
-			<ContactSection />
-			<Footer />
+			<Routes key={location.pathname} location={location}>
+				<Route path="/" element={<LandingPage />} exact />
+				<Route path="*" element={<LandingPage />} />
+			</Routes>
 		</>
 	);
 };
