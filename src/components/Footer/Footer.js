@@ -23,7 +23,7 @@ const Footer = () => {
 					.
 				</p>
 				<p className={styles["copyright"]}>
-					Surface image of 3D moon globe from{" "}
+					Surface of 3D moon globe from{" "}
 					<a
 						href="https://www.solarsystemscope.com/textures/"
 						target="_blank"
@@ -33,14 +33,22 @@ const Footer = () => {
 					.
 				</p>
 				<p className={styles["copyright"]}>
-					Topographic image of 3D moon globe from{" "}
+					Topography of 3D moon globe from{" "}
 					<a
 						href="https://astrogeology.usgs.gov/search/map/Moon/LMMP/LOLA-derived/Lunar_LRO_LOLA_ClrShade_Global_64ppd_BlueSteel"
 						target="_blank"
 						rel="noreferrer">
-						Moon LRO LOLA Shaded Relief
+						Moon LRO LOLA Shaded Relief (ESA)
 					</a>{" "}
-					by ESA.
+				</p>
+				<p className={styles["copyright"]}>
+					Seismic data gathered from{" "}
+					<a
+						href="https://pds-geosciences.wustl.edu/missions/apollo/seismic_event_catalog.htm"
+						target="_blank"
+						rel="noreferrer">
+						Apollo Seismic Event Catalog (NASA's PDS)
+					</a>{" "}
 				</p>
 				<p className={styles["copyright"]}>
 					Virtual Experience developed with{" "}
