@@ -16,16 +16,14 @@ const App = () => {
 			<ScrollToTop />
 			<AnimatePresence mode="wait">
 				<Routes key={location.pathname} location={location}>
-					<Route path="/" element={<LandingPage />} exact />
+					<Route path="/" element={<LandingPage />} />
 					<Route
 						path="/globe-exploration"
 						element={<GlobeExplorationPage />}
-						exact
 					/>
 					<Route
 						path="/unreal-engine-exploration"
 						element={<UnrealEngineExplorationPage />}
-						exact
 					/>
 					<Route path="*" element={<LandingPage />} />
 				</Routes>

@@ -110,8 +110,7 @@ const NavBar = () => {
 									<NavLink
 										className="nav-link custom-link text-light"
 										to="/globe-exploration"
-										onClick={viewTimeSeriesDataHandler}
-										exact="true">
+										onClick={viewTimeSeriesDataHandler}>
 										Time Series Analysis
 									</NavLink>
 								</li>
@@ -119,8 +118,7 @@ const NavBar = () => {
 									<NavLink
 										className="nav-link custom-link text-light"
 										onClick={resetContextHandler}
-										to="/"
-										exact="true">
+										to="/">
 										Back to Home
 									</NavLink>
 								</li>
@@ -130,8 +128,7 @@ const NavBar = () => {
 								<NavLink
 									className="nav-link custom-link text-light"
 									to="/"
-									onClick={resetContextHandler}
-									exact="true">
+									onClick={resetContextHandler}>
 									Back to Home
 								</NavLink>
 							</li>
