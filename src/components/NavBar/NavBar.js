@@ -72,7 +72,8 @@ const NavBar = () => {
 					id="navbarSupportedContent">
 					<ul className="navbar-nav ms-auto text-center">
 						{currentPath === "/lunar-trek" ||
-						currentPath === "/" ? (
+						currentPath === "/" ||
+						currentPath === "/lunar-trek/" ? (
 							<>
 								<li className="nav-item">
 									<a
