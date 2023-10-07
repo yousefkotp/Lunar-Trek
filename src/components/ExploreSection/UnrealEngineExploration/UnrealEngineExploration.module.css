@@ -23,6 +23,65 @@
 	overflow-x: hidden;
 }
 
+.unreal-explore-container a {
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+}
+
+.unreal-link {
+	background-color: rgba(124, 124, 124, 0.486);
+	display: flex;
+	align-items: center;
+	justify-self: center;
+	justify-content: center;
+	width: 60%;
+	margin: 1%;
+	opacity: 0;
+	transform: translateX(-50%);
+	transition: all 1s ease;
+	border: 2px solid #e9e6e6;
+	text-align: center;
+}
+
+.animate-unreal-link {
+	opacity: 1 !important;
+	transform: translateX(0) !important;
+}
+
+.unreal-link h3 {
+	color: #ffffff;
+	margin: 15px;
+	font-weight: 400 !important;
+	transition: all 1s ease;
+	text-decoration: none;
+}
+
+.unreal-link:hover {
+	background-color: rgb(255, 255, 255);
+	border: 2px solid #11283f;
+}
+
+.unreal-link:hover h3 {
+	color: #11283f;
+	justify-self: center;
+}
+
+.disclaimer {
+	margin-top: 15px;
+	text-align: center;
+}
+
+@media (max-width: 990px) {
+	.unreal-link {
+		width: 70%;
+		display: flex;
+		align-items: center;
+		justify-self: center;
+		justify-content: center;
+	}
+}
+
 @media (max-width: 768px) {
 	.unreal-exploration-box:first-child {
 		margin-top: 30%;

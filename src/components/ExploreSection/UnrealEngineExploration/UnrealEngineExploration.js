@@ -1,11 +1,13 @@
 import SectionHeader from "../../Miscellaneous/SectionHeader";
 import styles from "./UnrealEngineExploration.module.css";
 import useAnimate from "../../../hooks/use-animate";
+import { Link } from "react-router-dom";
 // import neural from "../../../assets/images/neural1.mp4";
 
 const UnrealEngineExploration = () => {
 	const intro1Ref = useAnimate(styles["animate-unreal-intro"], false);
 	const intro2Ref = useAnimate(styles["animate-unreal-intro"], false);
+	const linkRef = useAnimate(styles["animate-unreal-link"], false);
 	return (
 		<section>
 			<div
@@ -92,6 +94,22 @@ const UnrealEngineExploration = () => {
 							controls>
 							Your browser does not support the video tag.
 						</video>
+						<hr />
+						<Link
+							ref={linkRef}
+							className={`${styles["unreal-link"]}`}
+							to="/lunar-trek/unreal-engine-exploration">
+							<h3>Download and Try It Yourself</h3>
+						</Link>
+						<p className={styles["disclaimer"]}>
+							{" "}
+							**Disclamer: Due to resource limitations, Lunar Trek
+							Unreal Engine 5 Virtual Experience could not be
+							deployed to a web server. Executable files are
+							available for download at this link. Due to security
+							concerns with downloading files, the above videos
+							are provided as demonstrations.
+						</p>
 					</div>
 				</div>
 			</div>
