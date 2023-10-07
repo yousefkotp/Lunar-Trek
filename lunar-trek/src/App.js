@@ -1,4 +1,5 @@
 import "./App.css";
+import AboutSection from "./components/AboutSection/AboutSection";
 import Background from "./components/Background/Background";
 import ContactSection from "./components/ContactSection/ContactSection";
 import ExploreSection from "./components/ExploreSection/ExploreSection";
@@ -11,6 +12,7 @@ const App = () => {
 			<Background />
 			<HomeSection />
 			<ExploreSection />
+			<AboutSection />
 			<ContactSection />
 			<Footer />
 		</>

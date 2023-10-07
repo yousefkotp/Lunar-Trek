@@ -21,7 +21,7 @@ const ContactInformation = (props) => {
 				to={gmailLink}
 				src={gmailIcon}
 				alt="Gmail"
-				iconClassName={`${styles["gm-icon"]} ${styles["contact-gm-icon"]}`}
+				iconClassName={`${styles["contact-gm-icon"]}`}
 			/>
 			<Icon
 				link={true}

@@ -63,11 +63,6 @@
 	filter: invert(0.15) !important;
 }
 
-.gm-icon {
-	height: 50px;
-	width: 50px;
-}
-
 @media (max-width: 990px) {
 	.contact-information {
 		width: 70%;
@@ -81,13 +76,13 @@
 	}
 
 	.contact-icon {
-		width: 20px;
-		height: 20px;
+		width: 20px !important;
+		height: 20px !important;
 	}
 
 	.contact-gm-icon {
-		height: 35px;
-		width: 35px;
+		height: 35px !important;
+		width: 35px !important;
 	}
 }
 
