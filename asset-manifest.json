@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/lunar-trek/static/css/main.38e71279.css",
-    "main.js": "/lunar-trek/static/js/main.6cf05a1d.js",
+    "main.css": "/lunar-trek/static/css/main.8e235a3a.css",
+    "main.js": "/lunar-trek/static/js/main.b2ad056c.js",
     "static/js/787.0e852dcd.chunk.js": "/lunar-trek/static/js/787.0e852dcd.chunk.js",
     "static/media/topography.jpg": "/lunar-trek/static/media/topography.e60d305dcfeede509b60.jpg",
     "static/media/moon.jpg": "/lunar-trek/static/media/moon.510250a2fc36d1d7da9f.jpg",
@@ -16,12 +16,12 @@
     "static/media/linkedin.svg": "/lunar-trek/static/media/linkedin.fe8721c9a6b838941416b840c12455b6.svg",
     "index.html": "/lunar-trek/index.html",
     "static/media/box-arrow-up-right.svg": "/lunar-trek/static/media/box-arrow-up-right.1000047b298cd4d73cd49bbf792a5926.svg",
-    "main.38e71279.css.map": "/lunar-trek/static/css/main.38e71279.css.map",
-    "main.6cf05a1d.js.map": "/lunar-trek/static/js/main.6cf05a1d.js.map",
+    "main.8e235a3a.css.map": "/lunar-trek/static/css/main.8e235a3a.css.map",
+    "main.b2ad056c.js.map": "/lunar-trek/static/js/main.b2ad056c.js.map",
     "787.0e852dcd.chunk.js.map": "/lunar-trek/static/js/787.0e852dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.38e71279.css",
-    "static/js/main.6cf05a1d.js"
+    "static/css/main.8e235a3a.css",
+    "static/js/main.b2ad056c.js"
   ]
 }
