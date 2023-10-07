@@ -1,0 +1,21 @@
+.top-nav {
+	transition: all 0.5s ease;
+}
+
+.top-nav::before {
+	content: "";
+	background-color: #11283f;
+	width: 0;
+	transition: all 0.4s ease;
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+}
+
+.new-top-nav::before {
+	width: 100%;
+	left: 0;
+}
