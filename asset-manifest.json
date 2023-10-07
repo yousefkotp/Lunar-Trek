@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/lunar-trek/static/css/main.38e71279.css",
+    "main.js": "/lunar-trek/static/js/main.e056c1bf.js",
+    "static/js/787.0e852dcd.chunk.js": "/lunar-trek/static/js/787.0e852dcd.chunk.js",
+    "static/media/topography.jpg": "/lunar-trek/static/media/topography.e60d305dcfeede509b60.jpg",
+    "static/media/moon.jpg": "/lunar-trek/static/media/moon.510250a2fc36d1d7da9f.jpg",
+    "static/media/background-moon.jpeg": "/lunar-trek/static/media/background-moon.0a61bd0d1b4e6c81c08c.jpeg",
+    "static/media/helaly.jpg": "/lunar-trek/static/media/helaly.af42101db3a0fb604079.jpg",
+    "static/media/ezzat.jpg": "/lunar-trek/static/media/ezzat.84fa4149b108467a2377.jpg",
+    "static/media/adham.jpg": "/lunar-trek/static/media/adham.b0967c4bf18133e86dd5.jpg",
+    "static/media/kotp.jpg": "/lunar-trek/static/media/kotp.ac21b1eee92cfd452427.jpg",
+    "static/media/lord.jpg": "/lunar-trek/static/media/lord.b29d5428f3f0d39646f2.jpg",
+    "static/media/farid.jpg": "/lunar-trek/static/media/farid.908f43ecc32a8041cbb3.jpg",
+    "static/media/github.svg": "/lunar-trek/static/media/github.1dbcf7b2491be69d987cad6ab8eacebc.svg",
+    "static/media/linkedin.svg": "/lunar-trek/static/media/linkedin.fe8721c9a6b838941416b840c12455b6.svg",
+    "index.html": "/lunar-trek/index.html",
+    "static/media/box-arrow-up-right.svg": "/lunar-trek/static/media/box-arrow-up-right.1000047b298cd4d73cd49bbf792a5926.svg",
+    "main.38e71279.css.map": "/lunar-trek/static/css/main.38e71279.css.map",
+    "main.e056c1bf.js.map": "/lunar-trek/static/js/main.e056c1bf.js.map",
+    "787.0e852dcd.chunk.js.map": "/lunar-trek/static/js/787.0e852dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38e71279.css",
+    "static/js/main.e056c1bf.js"
+  ]
+}

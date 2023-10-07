@@ -1,1 +1,0 @@
-# Lunar Seismic Event Visualization
