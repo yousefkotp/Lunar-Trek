@@ -4,7 +4,6 @@
 	flex-direction: column;
 	margin: 10px;
 	padding: 35px;
-	/* text-align: center; */
 	font-size: large;
 }
 
@@ -15,7 +14,6 @@
 	opacity: 0;
 	transition: all 1s !important;
 	font-weight: 350 !important;
-	/* font-size: 2.2rem !important; */
 	margin-bottom: 10px !important;
 }
 
@@ -27,7 +25,6 @@
 	position: relative;
 	overflow: hidden;
 	font-weight: 350 !important;
-	/* font-size: 2.25rem !important; */
 	margin-bottom: 10px !important;
 }
 
@@ -39,14 +36,12 @@
 	color: white;
 	opacity: 0;
 	transition: all 3s;
-	/* font-size: 1.5rem !important; */
 }
 
 .dark-subtitle-text {
 	color: #11283f;
 	opacity: 0;
 	transition: all 3s;
-	/* font-size: 1.5rem !important; */
 }
 
 .animate {

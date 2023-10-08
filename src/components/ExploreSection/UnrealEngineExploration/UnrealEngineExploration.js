@@ -2,7 +2,6 @@ import SectionHeader from "../../Miscellaneous/SectionHeader";
 import styles from "./UnrealEngineExploration.module.css";
 import useAnimate from "../../../hooks/use-animate";
 import { Link } from "react-router-dom";
-// import neural from "../../../assets/images/neural1.mp4";
 
 const UnrealEngineExploration = () => {
 	const intro1Ref = useAnimate(styles["animate-unreal-intro"], false);
@@ -33,27 +32,22 @@ const UnrealEngineExploration = () => {
 							</p>
 						</div>
 						<hr />
-						<video
-							// src={neural}
-							width="100%"
-							autoPlay
-							muted
-							loop
-							playsInline
-							controls>
-							Your browser does not support the video tag.
-						</video>
-						{/* <div
-							className="
-						ratio ratio-16x9
-						">
+						<div className="ratio ratio-16x9">
 							<iframe
 								width="100%"
-								src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1"
-								title="YouTube Video"
+								src="https://www.youtube.com/embed/2iSZMv64wuU?autoplay=1&mute=1"
+								title="NASA | Tour of the Moon"
+								allow="
+								accelerometer;
+								autoplay;
+								clipboard-write;
+								encrypted-media;
+								gyroscope;
+								picture-in-picture;
+								web-share"
 								allowFullScreen
 							/>
-						</div> */}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -81,28 +75,32 @@ const UnrealEngineExploration = () => {
 							</p>
 						</div>
 						<hr />
-						{/* <video width="100%" height="100%" controls>
-							<source src="" type="video/mp4" />
-						</video> */}
-						<video
-							// src={neural}
-							width="100%"
-							autoPlay
-							muted
-							loop
-							playsInline
-							controls>
-							Your browser does not support the video tag.
-						</video>
+						<div className="ratio ratio-16x9">
+							<iframe
+								width="100%"
+								src="https://www.youtube.com/embed/2iSZMv64wuU?autoplay=1&mute=1"
+								title="NASA | Tour of the Moon"
+								allow="
+								accelerometer;
+								autoplay;
+								clipboard-write;
+								encrypted-media;
+								gyroscope;
+								picture-in-picture;
+								web-share"
+								allowFullScreen
+							/>
+						</div>
 						<hr />
 						<Link
 							ref={linkRef}
 							className={`${styles["unreal-link"]}`}
-							to="/lunar-trek/unreal-engine-exploration">
+							to="https://drive.google.com/drive/folders/1RILwmJiD-WPrtRR3bltP_I1SANGxLZVE?usp=drive_link"
+							target="_blank"
+							rel="noreferrer">
 							<h3>Download and Try It Yourself</h3>
 						</Link>
 						<p className={styles["disclaimer"]}>
-							{" "}
 							**Disclamer: Due to resource limitations, Lunar Trek
 							Unreal Engine 5 Virtual Experience could not be
 							deployed to a web server. Executable files are
