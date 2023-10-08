@@ -45,6 +45,15 @@
 	text-align: center;
 }
 
+.unreal-video {
+	opacity: 0;
+	transition: all 2s ease;
+}
+
+.animate-unreal-video {
+	opacity: 1 !important;
+}
+
 .animate-unreal-link {
 	opacity: 1 !important;
 	transform: translateX(0) !important;

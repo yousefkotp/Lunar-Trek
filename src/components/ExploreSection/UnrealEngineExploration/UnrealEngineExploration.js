@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const UnrealEngineExploration = () => {
 	const intro1Ref = useAnimate(styles["animate-unreal-intro"], false);
 	const intro2Ref = useAnimate(styles["animate-unreal-intro"], false);
+	const video1Ref = useAnimate(styles["animate-unreal-video"], false);
+	const video2Ref = useAnimate(styles["animate-unreal-video"], false);
 	const linkRef = useAnimate(styles["animate-unreal-link"], false);
 	return (
 		<section>
@@ -32,7 +34,9 @@ const UnrealEngineExploration = () => {
 							</p>
 						</div>
 						<hr />
-						<div className="ratio ratio-16x9">
+						<div
+							ref={video1Ref}
+							className={`ratio ratio-16x9 ${styles["unreal-video"]}`}>
 							<iframe
 								width="100%"
 								src="https://www.youtube.com/embed/4sWguPqmPUs?autoplay=1&mute=1"
@@ -75,7 +79,9 @@ const UnrealEngineExploration = () => {
 							</p>
 						</div>
 						<hr />
-						<div className="ratio ratio-16x9">
+						<div
+							ref={video2Ref}
+							className={`ratio ratio-16x9 ${styles["unreal-video"]}`}>
 							<iframe
 								width="100%"
 								src="https://www.youtube.com/embed/ooN5-kH8U6A?autoplay=1&mute=1"
