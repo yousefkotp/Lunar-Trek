@@ -1,5 +1,5 @@
 import styles from "./AboutSection.module.css";
-import linkArrow from "../../assets/icons/box-arrow-up-right.svg";
+import { ReactComponent as LinkArrow } from "../../assets/icons/box-arrow-up-right.svg";
 import useAnimate from "../../hooks/use-animate";
 import SectionHeader from "../Miscellaneous/SectionHeader";
 
@@ -157,30 +157,21 @@ const AboutSection = () => {
 								target="_blank"
 								rel="noreferrer">
 								NASA Space Apps Challenge
-								<img
-									className={styles["link-arrow"]}
-									src={linkArrow}
-								/>
+								<LinkArrow className={styles["link-arrow"]} />
 							</a>
 							<a
 								href="https://pds-geosciences.wustl.edu/missions/apollo/seismic_event_catalog.htm"
 								target="_blank"
 								rel="noreferrer">
 								Apollo Seismic Event Catalog (NASA's PDS)
-								<img
-									className={styles["link-arrow"]}
-									src={linkArrow}
-								/>
+								<LinkArrow className={styles["link-arrow"]} />
 							</a>
 							<a
 								href="https://repositories.lib.utexas.edu/handle/2152/65680"
 								target="_blank"
 								rel="noreferrer">
 								Read more about lunar seismic events
-								<img
-									className={styles["link-arrow"]}
-									src={linkArrow}
-								/>
+								<LinkArrow className={styles["link-arrow"]} />
 							</a>
 						</div>
 					</div>

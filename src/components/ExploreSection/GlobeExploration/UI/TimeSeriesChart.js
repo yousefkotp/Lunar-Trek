@@ -71,9 +71,9 @@ const TimeSeriesChart = (props) => {
 					display: true,
 					text: "Year",
 					font: {
-						size: 14,
+						size: window.innerWidth < 768 ? 6 : 14,
 						color: "white",
-						family: "Futura PT",
+						family: "Futura PT Ligt, Futura PT, Futura Std",
 						weight: "lighter",
 					},
 					color: "white",
@@ -81,8 +81,8 @@ const TimeSeriesChart = (props) => {
 				ticks: {
 					color: "white",
 					font: {
-						size: 10,
-						family: "Futura PT",
+						size: window.innerWidth < 768 ? 6 : 10,
+						family: "Futura PT Ligt, Futura PT, Futura Std",
 						color: "white",
 						weight: "lighter",
 					},
@@ -93,8 +93,8 @@ const TimeSeriesChart = (props) => {
 					display: true,
 					text: "Number of Seismic Events",
 					font: {
-						size: 14,
-						family: "Futura PT",
+						size: window.innerWidth < 768 ? 6 : 14,
+						family: "Futura PT Ligt, Futura PT, Futura Std",
 						weight: "lighter",
 					},
 					color: "white",
@@ -102,8 +102,8 @@ const TimeSeriesChart = (props) => {
 				ticks: {
 					color: "white",
 					font: {
-						size: 10,
-						family: "Futura PT",
+						size: window.innerWidth < 768 ? 6 : 10,
+						family: "Futura PT Ligt, Futura PT, Futura Std",
 						color: "white",
 					},
 				},
@@ -113,21 +113,23 @@ const TimeSeriesChart = (props) => {
 			legend: false,
 			tooltip: {
 				enabled: true,
+				displayColors: false,
+				usePointStyle: true,
 				titleFont: {
 					size: 20,
-					family: "Futura PT",
+					family: "Futura PT Ligt, Futura PT, Futura Std",
 					weight: "lighter",
 					color: "white",
 				},
 				bodyFont: {
 					size: 16,
-					family: "Futura PT",
+					family: "Futura PT Ligt, Futura PT, Futura Std",
 					weight: "lighter",
 					color: "white",
 				},
 				footerFont: {
 					size: 14,
-					family: "Futura PT",
+					family: "Futura PT Ligt, Futura PT, Futura Std",
 					weight: "lighter",
 					color: "white",
 				},
@@ -141,14 +143,22 @@ const TimeSeriesChart = (props) => {
 				dataContext.viewTimeSeriesData.on ? styles["show"] : ""
 			}`}>
 			<div className={styles["chart-legend"]}>
-				<label className="text-light">Shallow Moonquakes</label>
-				<div className={styles["shallow-legend"]} />
-				<label className="text-light">Deep Moonquakes</label>
-				<div className={styles["deep-legend"]} />
-				<label className="text-light">Meteorite Impacts</label>
-				<div className={styles["meteorite-legend"]} />
-				<label className="text-light">Artificial Impacts</label>
-				<div className={styles["artificial-legend"]} />
+				<div className={styles["legend"]}>
+					<label className="text-light">Shallow Moonquakes</label>
+					<div className={styles["shallow-legend"]} />
+				</div>
+				<div className={styles["legend"]}>
+					<label className="text-light">Deep Moonquakes</label>
+					<div className={styles["deep-legend"]} />
+				</div>
+				<div className={styles["legend"]}>
+					<label className="text-light">Meteorite Impacts</label>
+					<div className={styles["meteorite-legend"]} />
+				</div>
+				<div className={styles["legend"]}>
+					<label className="text-light">Artificial Impacts</label>
+					<div className={styles["artificial-legend"]} />
+				</div>
 			</div>
 			<div className={styles["chart-container"]}>
 				<Line data={chartData} options={chartOptions} />

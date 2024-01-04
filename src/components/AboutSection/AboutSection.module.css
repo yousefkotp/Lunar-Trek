@@ -18,6 +18,11 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(1, 1fr);
+	/* place-items: center; */
+	align-content: center;
+	justify-content: center;
+	justify-items: center;
+	gap: 10px;
 	opacity: 0;
 	transition: all 2s ease;
 	width: 100%;
@@ -27,13 +32,15 @@
 	margin-left: 5px;
 	height: 17.5px;
 	width: 17.5px;
-	filter: invert(1);
 }
 
 .research-links-container a {
 	color: inherit;
+	/* margin-right: 5px; */
 }
 
 .research-links-container a:last-child {
-	text-align: right;
+	/* text-align: right; */
+	margin-right: 0;
+	/* margin-left: 10px; */
 }

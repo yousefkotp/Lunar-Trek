@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-import githubIcon from "../../assets/icons/github.svg";
+import { ReactComponent as Github } from "../../assets/icons/github.svg";
 import useAnimate from "../../hooks/use-animate";
 import Icon from "../Miscellaneous/Icon";
 
@@ -75,10 +75,14 @@ const Footer = () => {
 				<p className={styles["source-code-link"]}>
 					<Icon
 						link={true}
-						to="https://www.github.com/MohammadHelaly/lunar-trek"
-						src={githubIcon}
-						alt="GitHub"
-					/>
+						to="https://www.github.com/MohammadHelaly/lunar-trek">
+						<Github
+							height="30px"
+							width="30px"
+							fill="white"
+							className={`${styles["source-code-icon"]}`}
+						/>
+					</Icon>
 				</p>
 				<hr />
 				<p className={styles["copyright"]}>&copy; {currentYear}</p>

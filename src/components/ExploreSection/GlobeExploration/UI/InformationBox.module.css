@@ -11,17 +11,18 @@
 	transition: all 1s ease;
 	border: 2px solid #e9e6e6;
 	cursor: default !important;
+	backdrop-filter: blur(3px);
 }
 
 .information-box h2 {
-	margin: 10px 0 0 15px;
+	margin: 10px 15px 0 15px;
 	font-weight: 300 !important;
 	font-size: 2.5rem;
 	transition: all 1s ease;
 }
 
 .information-box p {
-	margin: 10px 0 0 20px;
+	margin: 10px 15px 0 15px;
 	font-weight: 300 !important;
 	font-size: 1.25rem;
 	transition: all 1s ease;
@@ -52,12 +53,12 @@
 	}
 
 	.information-box h2 {
-		font-size: 0.8rem;
-		margin: 8.5px 0 0 7.5px;
+		font-size: 0.9rem;
+		margin: 10px 5px 0 5px;
 	}
 
 	.information-box p {
-		font-size: 0.5rem;
-		margin: 7.5px 0 0 7.5px;
+		font-size: 0.475rem;
+		margin: 8px 5px 0 5px;
 	}
 }

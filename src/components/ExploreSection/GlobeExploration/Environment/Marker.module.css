@@ -26,6 +26,8 @@
 	position: relative;
 	float: left;
 	transition: all 1s ease;
+	opacity: 0;
+	transform: translateY(100%);
 }
 
 .animate {

@@ -13,6 +13,7 @@
 	align-self: center;
 	justify-self: right;
 	bottom: 3%;
+	right: 20px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -24,7 +25,16 @@
 	transition: all 1s ease;
 }
 
-.checkboxes label {
+.legend-checkbox {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	transition: all 1s ease;
+}
+
+.legend-checkbox label {
 	color: white;
 	font-size: 1rem;
 	font-weight: 300;
@@ -72,7 +82,7 @@
 .hide {
 	opacity: 0;
 	transform: translateX(-50%);
-	transition: all 0.5s ease;
+	transition: all 0.4s ease;
 }
 
 .hidden {
@@ -107,11 +117,12 @@
 	outline: none;
 	background-color: rgba(124, 124, 124, 0.486);
 	margin-bottom: 10px;
-	transition: all 0.5s ease;
+	transition: all 0.4s ease;
 	font-size: 1.2rem;
 	font-weight: 300;
 	transition-property: opacity, transform, border, background-color;
-	transition-duration: 1s, 1s, 0.5s, 0.5s;
+	transition-duration: 1s, 1s, 0.4s, 0.4s;
+	backdrop-filter: blur(3px);
 }
 
 .exploration-menu button:hover,
@@ -189,13 +200,14 @@
 
 @media (max-width: 768px) {
 	.checkboxes {
-		bottom: 10%;
+		bottom: 5%;
 		width: 80%;
 		left: 10%;
+		right: auto;
 		padding: 15px 30px 15px 30px;
 	}
 
-	.checkboxes label {
+	.legend-checkbox label {
 		font-size: 0.5rem;
 	}
 
@@ -215,6 +227,12 @@
 		height: 25px;
 		margin-bottom: 5px;
 		transition-property: opacity, transform, border, background-color;
-		transition-duration: 1s, 1s, 0.5s, 0.5s;
+		transition-duration: 1s, 1s, 0.4s, 0.4s;
+	}
+}
+
+@media (max-width: 500px) {
+	.legend-checkbox {
+		width: 47%;
 	}
 }

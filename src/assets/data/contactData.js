@@ -14,7 +14,7 @@ const contactData = [
 		githubLink: "https://github.com/MohammadHelaly",
 	},
 	{
-		name: "Yousef    Kotp",
+		name: "Yousef Kotp",
 		photo: kotp,
 		gmailLink: "mailto:yousefkotp@outlook.com",
 		linkedinLink: "https://www.linkedin.com/in/yousef-kotp/",

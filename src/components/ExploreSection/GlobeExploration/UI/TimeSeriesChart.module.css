@@ -20,6 +20,7 @@
 	transition: all 1s ease;
 	font-size: 1.2rem;
 	font-weight: 300;
+	backdrop-filter: blur(3px);
 }
 
 .chart h2 {
@@ -44,6 +45,18 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px 0px 20px;
+}
+
+.legend {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.legend label {
+	margin: 0 5px 0 5px;
 }
 
 .chart-container {
@@ -91,7 +104,17 @@
 .show {
 	opacity: 1 !important;
 	transform: translateY(0) !important;
-	z-index: 10;
+	z-index: 9;
+}
+
+@media (max-width: 990px) {
+	.legend {
+		width: 40%;
+	}
+
+	.chart {
+		height: 200px;
+	}
 }
 
 @media (max-width: 768px) {
@@ -122,6 +145,10 @@
 	.chart {
 		width: 40%;
 		height: 200px;
+	}
+
+	.legend {
+		width: 100%;
 	}
 
 	.chart-container {

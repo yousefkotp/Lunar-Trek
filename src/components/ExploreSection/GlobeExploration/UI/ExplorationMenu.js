@@ -172,54 +172,68 @@ const ExplorationMenu = (props) => {
 			<div
 				className={`${styles["checkboxes"]} 
 			${dataContext.viewTimeSeriesData.on ? styles["animate"] : ""}`}>
-				<input
-					name="shallow-moonquakes"
-					id="shallow-moonquakes"
-					type="checkbox"
-					disabled={!dataContext.viewTimeSeriesData.on}
-					checked={dataContext.viewTimeSeriesData.shallowMoonquakes}
-					onChange={shallowMoonquakesChangeHandler}
-				/>
-				<label htmlFor="shallow-moonquakes" className="text-light">
-					Shallow Moonquakes
-				</label>
-				<div className={styles["shallow-legend"]} />
-				<input
-					type="checkbox"
-					name="deep-moonquakes"
-					id="deep-moonquakes"
-					disabled={!dataContext.viewTimeSeriesData.on}
-					checked={dataContext.viewTimeSeriesData.deepMoonquakes}
-					onChange={deepMoonquakesChangeHandler}
-				/>
-				<label htmlFor="deep-moonquakes" className="text-light">
-					Deep Moonquakes
-				</label>
-				<div className={styles["deep-legend"]} />
-				<input
-					type="checkbox"
-					name="meteorite-impacts"
-					id="meteorite-impacts"
-					disabled={!dataContext.viewTimeSeriesData.on}
-					checked={dataContext.viewTimeSeriesData.meteoriteImpacts}
-					onChange={meteoriteImpactsChangeHandler}
-				/>
-				<label htmlFor="meteorite-impacts" className="text-light">
-					Meteorite Impacts
-				</label>
-				<div className={styles["meteorite-legend"]} />
-				<input
-					type="checkbox"
-					name="artificial-impacts"
-					id="artificial-impacts"
-					disabled={!dataContext.viewTimeSeriesData.on}
-					checked={dataContext.viewTimeSeriesData.artificialImpacts}
-					onChange={artificialImpactsChangeHandler}
-				/>
-				<label htmlFor="artificial-impacts" className="text-light">
-					Artificial Impacts
-				</label>
-				<div className={styles["artificial-legend"]} />
+				<div className={styles["legend-checkbox"]}>
+					<input
+						name="shallow-moonquakes"
+						id="shallow-moonquakes"
+						type="checkbox"
+						disabled={!dataContext.viewTimeSeriesData.on}
+						checked={
+							dataContext.viewTimeSeriesData.shallowMoonquakes
+						}
+						onChange={shallowMoonquakesChangeHandler}
+					/>
+					<label htmlFor="shallow-moonquakes" className="text-light">
+						Shallow Moonquakes
+					</label>
+					<div className={styles["shallow-legend"]} />
+				</div>
+				<div className={styles["legend-checkbox"]}>
+					<input
+						type="checkbox"
+						name="deep-moonquakes"
+						id="deep-moonquakes"
+						disabled={!dataContext.viewTimeSeriesData.on}
+						checked={dataContext.viewTimeSeriesData.deepMoonquakes}
+						onChange={deepMoonquakesChangeHandler}
+					/>
+					<label htmlFor="deep-moonquakes" className="text-light">
+						Deep Moonquakes
+					</label>
+					<div className={styles["deep-legend"]} />
+				</div>
+				<div className={styles["legend-checkbox"]}>
+					<input
+						type="checkbox"
+						name="meteorite-impacts"
+						id="meteorite-impacts"
+						disabled={!dataContext.viewTimeSeriesData.on}
+						checked={
+							dataContext.viewTimeSeriesData.meteoriteImpacts
+						}
+						onChange={meteoriteImpactsChangeHandler}
+					/>
+					<label htmlFor="meteorite-impacts" className="text-light">
+						Meteorite Impacts
+					</label>
+					<div className={styles["meteorite-legend"]} />
+				</div>
+				<div className={styles["legend-checkbox"]}>
+					<input
+						type="checkbox"
+						name="artificial-impacts"
+						id="artificial-impacts"
+						disabled={!dataContext.viewTimeSeriesData.on}
+						checked={
+							dataContext.viewTimeSeriesData.artificialImpacts
+						}
+						onChange={artificialImpactsChangeHandler}
+					/>
+					<label htmlFor="artificial-impacts" className="text-light">
+						Artificial Impacts
+					</label>
+					<div className={styles["artificial-legend"]} />
+				</div>
 			</div>
 		</>
 	);

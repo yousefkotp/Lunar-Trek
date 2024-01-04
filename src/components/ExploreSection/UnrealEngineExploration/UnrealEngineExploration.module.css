@@ -1,13 +1,13 @@
 .unreal-explore-intro-1 {
 	opacity: 0;
 	transform: translateX(-70%);
-	transition: all 1.5s;
+	transition: all 1.4s;
 }
 
 .unreal-explore-intro-2 {
 	opacity: 0;
 	transform: translateX(70%);
-	transition: all 1.5s;
+	transition: all 1.4s;
 	color: #11283f !important;
 }
 
@@ -36,11 +36,12 @@
 	align-items: center;
 	justify-self: center;
 	justify-content: center;
-	width: 60%;
-	margin: 1%;
+	min-width: 50%;
+	margin: 1% 0 1% 0;
 	opacity: 0;
 	transform: translateX(-50%);
-	transition: all 1s ease;
+	transition: transform 1s ease, opacity 1s ease, background-color 0.4s ease,
+		border 0.4s ease, color 0.4s ease;
 	border: 2px solid #e9e6e6;
 	text-align: center;
 }
@@ -63,7 +64,7 @@
 	color: #ffffff;
 	margin: 15px;
 	font-weight: 400 !important;
-	transition: all 1s ease;
+	transition: all 0.4s ease;
 	text-decoration: none;
 }
 
@@ -85,7 +86,7 @@
 
 @media (max-width: 990px) {
 	.unreal-link {
-		width: 70%;
+		min-width: 100%;
 		display: flex;
 		align-items: center;
 		justify-self: center;

@@ -14,15 +14,16 @@ const AnimatedPage = (props) => {
 	};
 
 	const pageTransition =
-		window.innerWidth > 768
-			? {
-					type: "tween",
-					ease: "anticipate",
-					duration: 1.5,
-			  }
-			: {
-					duration: 1.5,
-			  };
+		// window.innerWidth > 768
+		// 	?
+		{
+			type: "tween",
+			ease: "anticipate",
+			duration: 1,
+		};
+	// : {
+	// 		duration: 1.5,
+	//   };
 	return (
 		<motion.div
 			variants={pageVariants}

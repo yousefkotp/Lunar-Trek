@@ -19,3 +19,9 @@
 	width: 100%;
 	left: 0;
 }
+
+@media (max-width: 768px) {
+	.blurred-top-nav {
+		backdrop-filter: blur(3px);
+	}
+}

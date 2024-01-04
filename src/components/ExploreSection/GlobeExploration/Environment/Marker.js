@@ -90,9 +90,13 @@ const Marker = (props) => {
 								? styles["animate"]
 								: ""
 						}`}>
-						{props.type === "landing site" && isNearSide && (
+						{props.type === "landing site" && (
 							<img
-								className={styles["landing-site-icon"]}
+								className={`${styles["landing-site-icon"]} ${
+									isNearSide && dataContext.landingSites
+										? styles["animate"]
+										: ""
+								}`}
 								src={locationArrow}
 								alt="Landing Site"
 							/>

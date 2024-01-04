@@ -54,7 +54,11 @@ const NavBar = () => {
 			className={`${
 				styles["top-nav"]
 			} navbar navbar-expand-lg fixed-top navbar-dark ${
-				scrolled ? styles["new-top-nav"] : ""
+				scrolled && !currentPath.includes("/globe-exploration")
+					? styles["new-top-nav"]
+					: currentPath.includes("/globe-exploration")
+					? styles["blurred-top-nav"]
+					: ""
 			}`}>
 			<div className="container topnav-container">
 				<button

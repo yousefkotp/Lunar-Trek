@@ -74,11 +74,11 @@ const InformationBox = () => {
 					? "N/A"
 					: dataContext.selectedQuake &&
 					  dataContext.selectedQuake.station
-					? dataContext.selectedQuake.station.map(
-							(station, index) => {
-								return station.value + " ";
-							}
-					  )
+					? dataContext.selectedQuake.station
+							.map((station, index) => {
+								return station.value;
+							})
+							.join(" ")
 					: "N/A"}
 			</p>
 		</div>

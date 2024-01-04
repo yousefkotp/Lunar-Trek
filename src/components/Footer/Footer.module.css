@@ -5,14 +5,27 @@
 
 .source-code-link {
 	text-align: right;
+	margin-right: 10px;
 	margin-top: -4%;
 }
 
+.source-code-icon {
+	height: 30px;
+	width: 30px;
+	transition: all 0.4s ease;
+}
+
+.source-code-icon:active,
+.source-code-icon:hover {
+	opacity: 0.75;
+	transform: translateY(-5px);
+}
+
 .copyright {
-	margin-bottom: 0.65vh;
+	margin-bottom: 4px;
 	font-weight: 50;
 	font-size: small;
-	margin-left: 1.5vh;
+	margin-left: 10px;
 }
 
 .copyright a {
@@ -41,6 +54,7 @@
 	.source-code-link {
 		text-align: center;
 		margin-top: 3%;
+		margin-right: auto;
 		margin-bottom: 0;
 	}
 }
