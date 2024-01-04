@@ -1,10 +1,16 @@
-import React, { useContext } from "react";
-import DataContext from "../../../../store/data-context";
+import React from "react";
 import Marker from "./Marker";
 import ParallelsAndMeridians from "./ParallelsAndMeridians";
+import { useSelector } from "react-redux";
 
 const ExplorationMarkers = (props) => {
-	const dataContext = useContext(DataContext);
+	const selectedQuake = useSelector((state) => state.data.selectedQuake);
+	const parallelsAndMeridians = useSelector(
+		(state) => state.data.parallelsAndMeridians
+	);
+	const viewTimeSeriesData = useSelector(
+		(state) => state.data.viewTimeSeriesData
+	);
 
 	const {
 		completeMoonquakeData,
@@ -48,7 +54,7 @@ const ExplorationMarkers = (props) => {
 					/>
 				);
 			})}
-			{dataContext.parallelsAndMeridians && <ParallelsAndMeridians />}
+			{parallelsAndMeridians && <ParallelsAndMeridians />}
 			<Marker
 				key={"0°"}
 				type="coordinate"
@@ -91,33 +97,32 @@ const ExplorationMarkers = (props) => {
 				longitude={90}
 				name="-90°"
 			/>
-			{dataContext.selectedQuake &&
+			{selectedQuake &&
 				completeMoonquakeData.find((quake, index) => {
 					return (
-						quake.year === dataContext.selectedQuake.year &&
-						quake.day === dataContext.selectedQuake.day &&
-						quake.hour === dataContext.selectedQuake.hour &&
-						quake.minute === dataContext.selectedQuake.minute &&
-						quake.seconds === dataContext.selectedQuake.seconds &&
-						quake.latitude === dataContext.selectedQuake.latitude &&
-						quake.longitude ===
-							dataContext.selectedQuake.longitude &&
-						quake.magnitude === dataContext.selectedQuake.magnitude
+						quake.year === selectedQuake.year &&
+						quake.day === selectedQuake.day &&
+						quake.hour === selectedQuake.hour &&
+						quake.minute === selectedQuake.minute &&
+						quake.seconds === selectedQuake.seconds &&
+						quake.latitude === selectedQuake.latitude &&
+						quake.longitude === selectedQuake.longitude &&
+						quake.magnitude === selectedQuake.magnitude
 					);
 				}) && (
 					<Marker
 						key={
 							"Q - " +
-							dataContext.selectedQuake.year +
+							selectedQuake.year +
 							"/" +
-							dataContext.selectedQuake.day
+							selectedQuake.day
 						}
 						type="quake"
-						latitude={dataContext.selectedQuake.latitude}
-						longitude={dataContext.selectedQuake.longitude}
+						latitude={selectedQuake.latitude}
+						longitude={selectedQuake.longitude}
 					/>
 				)}
-			{dataContext.viewTimeSeriesData.on &&
+			{viewTimeSeriesData.on &&
 				completeMoonquakeData.map((quake, index) => {
 					return (
 						<Marker

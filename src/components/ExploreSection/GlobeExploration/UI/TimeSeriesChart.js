@@ -1,17 +1,21 @@
 import React, { useContext } from "react";
-import DataContext from "../../../../store/data-context";
+// import DataContext from "../../../../store/context/data-context";
 import styles from "./TimeSeriesChart.module.css";
 import { Line } from "react-chartjs-2";
+import { useSelector } from "react-redux";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const TimeSeriesChart = (props) => {
-	const dataContext = useContext(DataContext);
+	// const dataContext = useContext(DataContext);
+	const viewTimeSeriesData = useSelector(
+		(state) => state.data.viewTimeSeriesData
+	);
 
 	const dataVisibilities = {
-		"Shallow Moonquake": dataContext.viewTimeSeriesData.shallowMoonquakes,
-		"Deep Moonquake": dataContext.viewTimeSeriesData.deepMoonquakes,
-		"Meteorite Impact": dataContext.viewTimeSeriesData.meteoriteImpacts,
-		"Artificial Impact": dataContext.viewTimeSeriesData.artificialImpacts,
+		"Shallow Moonquake": viewTimeSeriesData.shallowMoonquakes,
+		"Deep Moonquake": viewTimeSeriesData.deepMoonquakes,
+		"Meteorite Impact": viewTimeSeriesData.meteoriteImpacts,
+		"Artificial Impact": viewTimeSeriesData.artificialImpacts,
 	};
 
 	const dataTypeColors = {
@@ -140,7 +144,7 @@ const TimeSeriesChart = (props) => {
 	return (
 		<div
 			className={`${styles["chart"]} ${
-				dataContext.viewTimeSeriesData.on ? styles["show"] : ""
+				viewTimeSeriesData.on ? styles["show"] : ""
 			}`}>
 			<div className={styles["chart-legend"]}>
 				<div className={styles["legend"]}>

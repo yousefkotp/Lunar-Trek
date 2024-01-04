@@ -1,85 +1,67 @@
-import { React, useContext } from "react";
+import React from "react";
 import styles from "./InformationBox.module.css";
-import DataContext from "../../../../store/data-context";
+import { useSelector } from "react-redux";
 
 const InformationBox = () => {
-	const dataContext = useContext(DataContext);
+	const selectedQuake = useSelector((state) => state.data.selectedQuake);
+
+	const formatTime = (hour, minute, seconds) => `${
+		hour?.toString().padStart(2, "0") || "N/A"
+	}:
+		${minute?.toString().padStart(2, "0") || "N/A"}:
+		${seconds?.toString().padStart(2, "0") || "N/A"}`;
+
+	const formatDate = (year, day) =>
+		`${year || "N/A"}/${day?.toString().padStart(3, "0") || "N/A"}`;
+
+	const formatCoordinates = (latitude, longitude) =>
+		`${latitude || "N/A"}°, ${longitude || "N/A"}°`;
 
 	return (
 		<div
 			className={`text-light ${styles["information-box"]} ${
-				dataContext.selectedQuake ? styles["animate"] : ""
+				selectedQuake ? styles["animate"] : ""
 			}`}>
 			<h2>Seismic Event:</h2>
 			<hr />
-			<p>
-				Type:{" "}
-				{dataContext.selectedQuake && dataContext.selectedQuake.type
-					? dataContext.selectedQuake.type[0] +
-					  " - " +
-					  dataContext.selectedQuake.type[1]
-					: "N/A"}
-			</p>
+			<p>Type: {selectedQuake?.type?.join(" - ") || "N/A"}</p>
 			<p>
 				Date of detection:{" "}
-				{dataContext.selectedQuake && dataContext.selectedQuake.year}/
-				{dataContext.selectedQuake &&
-					dataContext.selectedQuake.day.toString().padStart(3, "0")}
-			</p>
-			<p>
-				Time of detection :{" "}
-				{dataContext.selectedQuake &&
-					dataContext.selectedQuake.hour.toString().padStart(2, "0")}
-				:
-				{dataContext.selectedQuake &&
-					dataContext.selectedQuake.minute
-						.toString()
-						.padStart(2, "0")}
-				:
-				{dataContext.selectedQuake &&
-					Math.floor(dataContext.selectedQuake.seconds)
-						.toString()
-						.padStart(2, "0")}
-			</p>
-			<p>
-				Epicentre :{" "}
-				{dataContext.selectedQuake &&
-					dataContext.selectedQuake.latitude}
-				{"°"}
-				{", "}
-				{dataContext.selectedQuake &&
-					dataContext.selectedQuake.longitude}
-				{"°"}
-			</p>
-			<p>
-				Magnitude:{" "}
-				{dataContext.selectedQuake &&
-				dataContext.selectedQuake.magnitude
-					? dataContext.selectedQuake.magnitude
+				{selectedQuake
+					? formatDate(selectedQuake?.year, selectedQuake?.day)
 					: "N/A"}
 			</p>
 			<p>
+				Time of detection:{" "}
+				{selectedQuake
+					? formatTime(
+							selectedQuake?.hour,
+							selectedQuake?.minute,
+							selectedQuake?.seconds
+					  )
+					: "N/A"}
+			</p>
+			<p>
+				Epicentre:{" "}
+				{selectedQuake
+					? formatCoordinates(
+							selectedQuake?.latitude,
+							selectedQuake?.longitude
+					  )
+					: "N/A"}
+			</p>
+			<p>Magnitude: {selectedQuake?.magnitude || "N/A"}</p>
+			<p>
 				Depth:{" "}
-				{dataContext.selectedQuake &&
-				dataContext.selectedQuake.depth &&
-				dataContext.selectedQuake.depth > 0
-					? dataContext.selectedQuake.depth + " km"
+				{selectedQuake?.depth && selectedQuake?.depth > 0
+					? `${selectedQuake.depth} km`
 					: "N/A"}
 			</p>
 			<p>
 				Detected by Apollo Site(s):{" "}
-				{dataContext.selectedQuake &&
-				dataContext.selectedQuake.station &&
-				dataContext.selectedQuake.station.length === 0
-					? "N/A"
-					: dataContext.selectedQuake &&
-					  dataContext.selectedQuake.station
-					? dataContext.selectedQuake.station
-							.map((station, index) => {
-								return station.value;
-							})
-							.join(" ")
-					: "N/A"}
+				{selectedQuake?.station
+					?.map((station) => station.value)
+					.join(" ") || "N/A"}
 			</p>
 		</div>
 	);

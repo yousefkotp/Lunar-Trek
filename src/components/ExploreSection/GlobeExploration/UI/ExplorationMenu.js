@@ -1,8 +1,8 @@
-import { useContext } from "react";
 import styles from "./ExplorationMenu.module.css";
 import useAnimate from "../../../../hooks/use-animate";
-import DataContext from "../../../../store/data-context";
 import legend from "../../../../assets/images/legend.png";
+import { useSelector, useDispatch } from "react-redux";
+import { dataActions } from "../../../../store/slices/dataSlice";
 
 const ExplorationMenu = (props) => {
 	const button1Ref = useAnimate(styles["animate"], false);
@@ -14,40 +14,89 @@ const ExplorationMenu = (props) => {
 
 	const { nakamura1979MoonquakeData, lognonne2003MoonquakeData } = props;
 
-	const dataContext = useContext(DataContext);
+	const dispatch = useDispatch();
+	const {
+		toggleTopographicView,
+		toggleParallelsAndMeridians,
+		toggleSeasAndOceans,
+		toggleCratersAndMountains,
+		toggleLandingSites,
+		setSelectedQuake,
+		setViewTimeSeriesData,
+	} = dataActions;
+
+	const topographicView = useSelector((state) => state.data.topographicView);
+	const parallelsAndMeridians = useSelector(
+		(state) => state.data.parallelsAndMeridians
+	);
+	const seasAndOceans = useSelector((state) => state.data.seasAndOceans);
+	const cratersAndMountains = useSelector(
+		(state) => state.data.cratersAndMountains
+	);
+	const landingSites = useSelector((state) => state.data.landingSites);
+	const selectedQuake = useSelector((state) => state.data.selectedQuake);
+	const viewTimeSeriesData = useSelector(
+		(state) => state.data.viewTimeSeriesData
+	);
+
+	const toggleTopographicViewHandler = () => {
+		dispatch(toggleTopographicView());
+	};
+
+	const toggleParallelsAndMeridiansHandler = () => {
+		dispatch(toggleParallelsAndMeridians());
+	};
+
+	const toggleSeasAndOceansHandler = () => {
+		dispatch(toggleSeasAndOceans());
+	};
+
+	const toggleCratersAndMountainsHandler = () => {
+		dispatch(toggleCratersAndMountains());
+	};
+
+	const toggleLandingSitesHandler = () => {
+		dispatch(toggleLandingSites());
+	};
 
 	const quakeChangeHandler = (event) => {
 		if (event.target.value === "") {
-			dataContext.setSelectedQuake(null);
+			dispatch(setSelectedQuake(null));
 		} else {
-			dataContext.setSelectedQuake(JSON.parse(event.target.value));
+			dispatch(setSelectedQuake(JSON.parse(event.target.value)));
 		}
 	};
 
 	const shallowMoonquakesChangeHandler = () => {
-		dataContext.setViewTimeSeriesData({
-			shallowMoonquakes:
-				!dataContext.viewTimeSeriesData.shallowMoonquakes,
-		});
+		dispatch(
+			setViewTimeSeriesData({
+				shallowMoonquakes: !viewTimeSeriesData.shallowMoonquakes,
+			})
+		);
 	};
 
 	const deepMoonquakesChangeHandler = () => {
-		dataContext.setViewTimeSeriesData({
-			deepMoonquakes: !dataContext.viewTimeSeriesData.deepMoonquakes,
-		});
+		dispatch(
+			setViewTimeSeriesData({
+				deepMoonquakes: !viewTimeSeriesData.deepMoonquakes,
+			})
+		);
 	};
 
 	const meteoriteImpactsChangeHandler = () => {
-		dataContext.setViewTimeSeriesData({
-			meteoriteImpacts: !dataContext.viewTimeSeriesData.meteoriteImpacts,
-		});
+		dispatch(
+			setViewTimeSeriesData({
+				meteoriteImpacts: !viewTimeSeriesData.meteoriteImpacts,
+			})
+		);
 	};
 
 	const artificialImpactsChangeHandler = () => {
-		dataContext.setViewTimeSeriesData({
-			artificialImpacts:
-				!dataContext.viewTimeSeriesData.artificialImpacts,
-		});
+		dispatch(
+			setViewTimeSeriesData({
+				artificialImpacts: !viewTimeSeriesData.artificialImpacts,
+			})
+		);
 	};
 
 	return (
@@ -55,69 +104,53 @@ const ExplorationMenu = (props) => {
 			<div className={styles["exploration-menu"]}>
 				<div ref={button1Ref} className={styles["hide"]}>
 					<button
-						className={
-							dataContext.topographicView ? styles["active"] : ""
-						}
-						onClick={dataContext.toggleTopographicView}>
+						className={topographicView ? styles["active"] : ""}
+						onClick={toggleTopographicViewHandler}>
 						Topographic View
 					</button>
 				</div>
 				<div ref={button2Ref} className={styles["hide"]}>
 					<button
 						className={
-							dataContext.parallelsAndMeridians
-								? styles["active"]
-								: ""
+							parallelsAndMeridians ? styles["active"] : ""
 						}
-						onClick={dataContext.toggleParallelsAndMeridians}>
+						onClick={toggleParallelsAndMeridiansHandler}>
 						Parallels and Meridians
 					</button>
 				</div>
 				<div ref={button3Ref} className={styles["hide"]}>
 					<button
-						className={
-							dataContext.seasAndOceans ? styles["active"] : ""
-						}
-						onClick={dataContext.toggleSeasAndOceans}>
+						className={seasAndOceans ? styles["active"] : ""}
+						onClick={toggleSeasAndOceansHandler}>
 						Seas and Oceans
 					</button>
 				</div>
 				<div ref={button4Ref} className={styles["hide"]}>
 					<button
-						className={
-							dataContext.cratersAndMountains
-								? styles["active"]
-								: ""
-						}
-						onClick={dataContext.toggleCratersAndMountains}>
+						className={cratersAndMountains ? styles["active"] : ""}
+						onClick={toggleCratersAndMountainsHandler}>
 						Craters and Mountains
 					</button>
 				</div>
 				<div ref={button5Ref} className={styles["hide"]}>
 					<button
-						className={
-							dataContext.landingSites ? styles["active"] : ""
-						}
-						onClick={dataContext.toggleLandingSites}>
+						className={landingSites ? styles["active"] : ""}
+						onClick={toggleLandingSitesHandler}>
 						Apollo Mission Landing Sites
 					</button>
 				</div>
 				<div
 					ref={button6Ref}
 					className={styles["hide"]}
-					style={
-						dataContext.viewTimeSeriesData.on ? { opacity: 0 } : {}
-					}>
+					style={viewTimeSeriesData.on ? { opacity: 0 } : {}}>
 					<select
 						name="quake"
-						className={
-							dataContext.selectedQuake ? styles["active"] : ""
-						}
-						disabled={dataContext.viewTimeSeriesData.on}
+						className={selectedQuake ? styles["active"] : ""}
+						disabled={viewTimeSeriesData.on}
 						value={
-							dataContext.viewTimeSeriesData.on
+							viewTimeSeriesData.on
 								? ""
-								: JSON.stringify(dataContext.selectedQuake)
+								: JSON.stringify(selectedQuake)
 						}
 						onChange={quakeChangeHandler}>
 						<option value="">Select a Seismic Event</option>
@@ -155,7 +188,7 @@ const ExplorationMenu = (props) => {
 				</div>
 				<div
 					className={`${styles["legend-container"]}
-				 ${dataContext.topographicView ? styles["show-legend"] : ""}
+				 ${topographicView ? styles["show-legend"] : ""}
 				 `}>
 					<p>Elevation (m):</p>
 					<div className={styles["legend-text-container"]}>
@@ -171,16 +204,14 @@ const ExplorationMenu = (props) => {
 			</div>
 			<div
 				className={`${styles["checkboxes"]} 
-			${dataContext.viewTimeSeriesData.on ? styles["animate"] : ""}`}>
+			${viewTimeSeriesData.on ? styles["animate"] : ""}`}>
 				<div className={styles["legend-checkbox"]}>
 					<input
 						name="shallow-moonquakes"
 						id="shallow-moonquakes"
 						type="checkbox"
-						disabled={!dataContext.viewTimeSeriesData.on}
-						checked={
-							dataContext.viewTimeSeriesData.shallowMoonquakes
-						}
+						disabled={!viewTimeSeriesData.on}
+						checked={viewTimeSeriesData.shallowMoonquakes}
 						onChange={shallowMoonquakesChangeHandler}
 					/>
 					<label htmlFor="shallow-moonquakes" className="text-light">
@@ -193,8 +224,8 @@ const ExplorationMenu = (props) => {
 						type="checkbox"
 						name="deep-moonquakes"
 						id="deep-moonquakes"
-						disabled={!dataContext.viewTimeSeriesData.on}
-						checked={dataContext.viewTimeSeriesData.deepMoonquakes}
+						disabled={!viewTimeSeriesData.on}
+						checked={viewTimeSeriesData.deepMoonquakes}
 						onChange={deepMoonquakesChangeHandler}
 					/>
 					<label htmlFor="deep-moonquakes" className="text-light">
@@ -207,10 +238,8 @@ const ExplorationMenu = (props) => {
 						type="checkbox"
 						name="meteorite-impacts"
 						id="meteorite-impacts"
-						disabled={!dataContext.viewTimeSeriesData.on}
-						checked={
-							dataContext.viewTimeSeriesData.meteoriteImpacts
-						}
+						disabled={!viewTimeSeriesData.on}
+						checked={viewTimeSeriesData.meteoriteImpacts}
 						onChange={meteoriteImpactsChangeHandler}
 					/>
 					<label htmlFor="meteorite-impacts" className="text-light">
@@ -223,10 +252,8 @@ const ExplorationMenu = (props) => {
 						type="checkbox"
 						name="artificial-impacts"
 						id="artificial-impacts"
-						disabled={!dataContext.viewTimeSeriesData.on}
-						checked={
-							dataContext.viewTimeSeriesData.artificialImpacts
-						}
+						disabled={!viewTimeSeriesData.on}
+						checked={viewTimeSeriesData.artificialImpacts}
 						onChange={artificialImpactsChangeHandler}
 					/>
 					<label htmlFor="artificial-impacts" className="text-light">

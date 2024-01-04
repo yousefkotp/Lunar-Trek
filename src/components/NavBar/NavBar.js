@@ -1,11 +1,14 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import { NavLink, useLocation } from "react-router-dom";
-import DataContext from "../../store/data-context";
+import { useDispatch } from "react-redux";
+import { dataActions } from "../../store/slices/dataSlice";
 
 const NavBar = () => {
 	const [scrolled, setScrolled] = useState(false);
 	const currentPath = useLocation().pathname;
+	const dispatch = useDispatch();
+	const { reset, setSelectedQuake, setViewTimeSeriesData } = dataActions;
 
 	const handleScroll = () => {
 		if (window.scrollY > 100) {
@@ -22,31 +25,34 @@ const NavBar = () => {
 		};
 	}, []);
 
-	const dataContext = useContext(DataContext);
-
 	const resetContextHandler = () => {
-		dataContext.reset();
+		dispatch(reset());
 	};
 
 	const viewTimeSeriesDataHandler = () => {
-		dataContext.setSelectedQuake(null);
-		dataContext.setViewTimeSeriesData({
-			on: true,
-			shallowMoonquakes: true,
-			deepMoonquakes: true,
-			meteoriteImpacts: true,
-			artificialImpacts: true,
-		});
+		dispatch(setSelectedQuake(null));
+		dispatch(
+			setViewTimeSeriesData({
+				on: true,
+				shallowMoonquakes: true,
+				deepMoonquakes: true,
+				meteoriteImpacts: true,
+				artificialImpacts: true,
+			})
+		);
 	};
 
 	const freeExplorationHandler = () => {
-		dataContext.setViewTimeSeriesData({
-			on: false,
-			shallowMoonquakes: false,
-			deepMoonquakes: false,
-			meteoriteImpacts: false,
-			artificialImpacts: false,
-		});
+		dispatch(setSelectedQuake(null));
+		dispatch(
+			setViewTimeSeriesData({
+				on: false,
+				shallowMoonquakes: false,
+				deepMoonquakes: false,
+				meteoriteImpacts: false,
+				artificialImpacts: false,
+			})
+		);
 	};
 
 	return (

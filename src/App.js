@@ -6,12 +6,13 @@ import ScrollToTop from "./pages/ScrollToTop";
 import LandingPage from "./pages/LandingPage";
 import GlobeExplorationPage from "./pages/GlobeExplorationPage";
 import UnrealEngineExplorationPage from "./pages/UnrealEngineExplorationPage";
-import DataProvider from "./store/DataProvider";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const App = () => {
 	const location = useLocation();
 	return (
-		<DataProvider>
+		<Provider store={store}>
 			<Background />
 			<ScrollToTop />
 			<AnimatePresence mode="wait">
@@ -28,7 +29,7 @@ const App = () => {
 					<Route path="*" element={<LandingPage />} />
 				</Routes>
 			</AnimatePresence>
-		</DataProvider>
+		</Provider>
 	);
 };
 
