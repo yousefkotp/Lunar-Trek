@@ -1,6 +1,5 @@
 {
 	"name": "lunar-trek",
-	"homepage": "https://mohammadhelaly.github.io/lunar-trek/",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {

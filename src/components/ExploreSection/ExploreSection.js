@@ -34,13 +34,13 @@ const ExploreSection = () => {
 						<Link
 							ref={link1Ref}
 							className={`${styles["link"]}`}
-							to="/lunar-trek/globe-exploration">
+							to="/globe-exploration">
 							<h3>Explore a 3D Globe of Luna</h3>
 						</Link>
 						<Link
 							ref={link2Ref}
 							className={`${styles["link"]}`}
-							to="/lunar-trek/unreal-engine-exploration">
+							to="/unreal-engine-exploration">
 							<h3>Explore Luna in Unreal Engine 5</h3>
 						</Link>
 					</div>
