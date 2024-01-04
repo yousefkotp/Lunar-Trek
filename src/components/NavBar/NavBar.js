@@ -60,9 +60,9 @@ const NavBar = () => {
 			className={`${
 				styles["top-nav"]
 			} navbar navbar-expand-lg fixed-top navbar-dark ${
-				scrolled && !currentPath.includes("/globe-exploration")
+				scrolled && currentPath !== "/lunar-trek/globe-exploration"
 					? styles["new-top-nav"]
-					: currentPath.includes("/globe-exploration")
+					: currentPath === "/lunar-trek/globe-exploration"
 					? styles["blurred-top-nav"]
 					: ""
 			}`}>
