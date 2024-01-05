@@ -1,7 +1,7 @@
 import React from "react";
 import { Html } from "@react-three/drei";
 import styles from "./Marker.module.css";
-import locationArrow from "../../../../assets/icons/arrow-icon.png";
+import { ReactComponent as LocationArrow } from "../../../../assets/icons/location-arrow-thin.svg";
 import { useSelector } from "react-redux";
 
 const Marker = (props) => {
@@ -100,14 +100,22 @@ const Marker = (props) => {
 								: ""
 						}`}>
 						{props.type === "landing site" && (
-							<img
+							// <img
+							// 	className={`${styles["landing-site-icon"]} ${
+							// 		isNearSide && landingSites
+							// 			? styles["animate"]
+							// 			: ""
+							// 	}`}
+							// 	src={locationArrow}
+							// 	alt="Landing Site"
+							// />
+							<LocationArrow
+								fill="white"
 								className={`${styles["landing-site-icon"]} ${
 									isNearSide && landingSites
 										? styles["animate"]
 										: ""
 								}`}
-								src={locationArrow}
-								alt="Landing Site"
 							/>
 						)}
 						{props.type === "quake" && selectedQuake && (
