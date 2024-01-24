@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/lunar-trek/static/css/main.ad4f0f9d.css",
-    "main.js": "/lunar-trek/static/js/main.61a3b945.js",
+    "main.css": "/lunar-trek/static/css/main.20e6adca.css",
+    "main.js": "/lunar-trek/static/js/main.e31c6bdb.js",
     "static/js/787.0e852dcd.chunk.js": "/lunar-trek/static/js/787.0e852dcd.chunk.js",
     "static/media/topography.jpg": "/lunar-trek/static/media/topography.e60d305dcfeede509b60.jpg",
     "static/media/moon.jpg": "/lunar-trek/static/media/moon.510250a2fc36d1d7da9f.jpg",
     "static/media/background-moon.jpeg": "/lunar-trek/static/media/background-moon.0a61bd0d1b4e6c81c08c.jpeg",
     "static/media/helaly.jpg": "/lunar-trek/static/media/helaly.af42101db3a0fb604079.jpg",
+    "static/media/FuturaPTLight.otf": "/lunar-trek/static/media/FuturaPTLight.725c77b4e125ed776783.otf",
     "static/media/ezzat.jpg": "/lunar-trek/static/media/ezzat.84fa4149b108467a2377.jpg",
     "static/media/adham.jpg": "/lunar-trek/static/media/adham.b0967c4bf18133e86dd5.jpg",
     "static/media/kotp.jpg": "/lunar-trek/static/media/kotp.ac21b1eee92cfd452427.jpg",
     "static/media/lord.jpg": "/lunar-trek/static/media/lord.b29d5428f3f0d39646f2.jpg",
     "static/media/farid.jpg": "/lunar-trek/static/media/farid.908f43ecc32a8041cbb3.jpg",
+    "static/media/location-arrow-thin.svg": "/lunar-trek/static/media/location-arrow-thin.b10fbf6cffaa6919d840bb41fbccc18e.svg",
     "index.html": "/lunar-trek/index.html",
     "static/media/github.svg": "/lunar-trek/static/media/github.1dbcf7b2491be69d987cad6ab8eacebc.svg",
     "static/media/linkedin.svg": "/lunar-trek/static/media/linkedin.fe8721c9a6b838941416b840c12455b6.svg",
     "static/media/box-arrow-up-right.svg": "/lunar-trek/static/media/box-arrow-up-right.f4dd501ca18a8dc43520500a250318e0.svg",
-    "main.ad4f0f9d.css.map": "/lunar-trek/static/css/main.ad4f0f9d.css.map",
-    "main.61a3b945.js.map": "/lunar-trek/static/js/main.61a3b945.js.map",
+    "static/media/gmail.svg": "/lunar-trek/static/media/gmail.a6117a27b82c2821412915ed635cb042.svg",
+    "main.20e6adca.css.map": "/lunar-trek/static/css/main.20e6adca.css.map",
+    "main.e31c6bdb.js.map": "/lunar-trek/static/js/main.e31c6bdb.js.map",
     "787.0e852dcd.chunk.js.map": "/lunar-trek/static/js/787.0e852dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad4f0f9d.css",
-    "static/js/main.61a3b945.js"
+    "static/css/main.20e6adca.css",
+    "static/js/main.e31c6bdb.js"
   ]
 }
