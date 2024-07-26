@@ -21,7 +21,6 @@
 	display: grid;
 	z-index: 1;
 	margin: 0 10% 0 10%;
-	overflow-x: hidden;
 }
 
 .unreal-explore-container a {

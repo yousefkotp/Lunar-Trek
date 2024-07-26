@@ -23,7 +23,6 @@
 	opacity: 0;
 	transition: all 1s !important;
 	position: relative;
-	overflow: hidden;
 	/* font-weight: 350 !important; */
 	margin-bottom: 10px !important;
 }
