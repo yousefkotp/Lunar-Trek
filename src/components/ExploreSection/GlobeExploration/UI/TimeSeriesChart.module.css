@@ -45,8 +45,9 @@
 
 @media (max-width: 990px) {
 	.chart {
-		height: 200px;
+		height: 220px;
 		padding: 4px;
+		width: 50%;
 	}
 }
 

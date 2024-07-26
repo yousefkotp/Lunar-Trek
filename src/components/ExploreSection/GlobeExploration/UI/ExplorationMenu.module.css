@@ -192,6 +192,12 @@
 	max-width: 100%;
 }
 
+@media (max-width: 990px) {
+	.exploration-menu {
+		width: 36%;
+	}
+}
+
 @media (max-width: 768px) {
 	.checkboxes {
 		bottom: 4vw;

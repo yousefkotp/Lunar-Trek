@@ -1,0 +1,48 @@
+.tooltip {
+	background-color: rgba(0, 0, 0, 0.8);
+	border: none;
+	border-radius: 0;
+	/* border-bottom: 2px solid #e9e6e6; */
+	text-align: start;
+	display: flex;
+	flex-direction: column;
+	/* gap: 4px; */
+}
+
+.label {
+	padding: 16px 16px 4px 16px;
+	color: black;
+	font-size: 2rem !important;
+	margin: 0 !important;
+	background-color: #e9e6e6;
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 16px;
+	gap: 2px;
+}
+
+.value {
+	color: white;
+	font-size: 1rem !important;
+	margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+	.label {
+		font-size: 1.2rem !important;
+		padding: 8px 8px 4px 8px;
+	}
+
+	.body {
+		padding: 8px;
+	}
+
+	.value {
+		font-size: 0.6rem !important;
+	}
+}

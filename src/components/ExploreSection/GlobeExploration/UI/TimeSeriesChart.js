@@ -6,10 +6,11 @@ import {
 	XAxis,
 	YAxis,
 	CartesianGrid,
-	Tooltip,
+	Tooltip as RCTooltip,
 	Label,
 	ResponsiveContainer,
 } from "recharts";
+import Tooltip from "./Tooltip";
 import styles from "./TimeSeriesChart.module.css";
 
 const TimeSeriesChart = (props) => {
@@ -98,36 +99,14 @@ const TimeSeriesChart = (props) => {
 							position="insideBottomLeft"
 						/>
 					</YAxis>
-					<Tooltip
-						contentStyle={{
-							backgroundColor: "rgba(0, 0, 0, 0.8)",
-							borderTop: "none",
-							borderLeft: "none",
-							borderRight: "none",
-							borderBottom: "2px solid #e9e6e6",
-							borderRadius: "0",
-							backdropFilter: "blur(3px)",
-						}}
-						labelStyle={{
-							color: "white",
-							fontFamily:
-								"Futura PT Light, Futura PT, Futura Std",
-							fontWeight: "lighter",
-						}}
-						itemStyle={{
-							color: "white",
-							fontFamily:
-								"Futura PT Light, Futura PT, Futura Std",
-							fontWeight: "lighter",
-						}}
-					/>
+					<RCTooltip content={<Tooltip />} />
 					{lines.map((type) => (
 						<Line
 							key={type}
 							type="monotone"
 							dataKey={type}
 							stroke={dataTypeColors[type]}
-							dot={false}
+							// dot={false}
 						/>
 					))}
 				</LineChart>
