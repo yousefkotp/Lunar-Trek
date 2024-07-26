@@ -1,12 +1,18 @@
-import React, { useContext } from "react";
-// import DataContext from "../../../../store/context/data-context";
-import styles from "./TimeSeriesChart.module.css";
-import { Line } from "react-chartjs-2";
+import React from "react";
 import { useSelector } from "react-redux";
-import { Chart as ChartJS } from "chart.js/auto";
+import {
+	LineChart,
+	Line,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Label,
+	ResponsiveContainer,
+} from "recharts";
+import styles from "./TimeSeriesChart.module.css";
 
 const TimeSeriesChart = (props) => {
-	// const dataContext = useContext(DataContext);
 	const viewTimeSeriesData = useSelector(
 		(state) => state.data.viewTimeSeriesData
 	);
@@ -27,6 +33,7 @@ const TimeSeriesChart = (props) => {
 
 	const countByYearAndType = (data) => {
 		const counts = {};
+		const allTypes = Object.keys(dataTypeColors);
 
 		data.forEach((item) => {
 			const { year, type: typeArray } = item;
@@ -34,121 +41,97 @@ const TimeSeriesChart = (props) => {
 
 			if (!counts[year]) {
 				counts[year] = {};
+				allTypes.forEach((type) => (counts[year][type] = 0)); // Initialize all types to 0
 			}
 
-			if (!counts[year][type]) {
-				counts[year][type] = 1;
-			} else {
-				counts[year][type]++;
-			}
+			counts[year][type]++;
 		});
 
 		return counts;
 	};
 
 	const counts = countByYearAndType(props.data);
-	const years = Object.keys(counts);
-	const types = Array.from(
-		new Set(Object.values(counts).flatMap((types) => Object.keys(types)))
+	const years = Object.keys(counts).map((year) => ({
+		year,
+		...counts[year],
+	}));
+
+	const lines = Object.keys(dataTypeColors).filter(
+		(type) => dataVisibilities[type]
 	);
 
-	const datasets = types
-		.filter((type) => dataVisibilities[type])
-		.map((type) => ({
-			label: type,
-			data: years.map((year) => counts[year][type] || 0),
-			borderColor: dataTypeColors[type],
-			fill: false,
-		}));
-
-	const chartData = {
-		labels: years,
-		datasets,
-	};
-
-	const chartOptions = {
-		maintainAspectRatio: false,
-		responsive: true,
-		scales: {
-			x: {
-				title: {
-					display: true,
-					text: "Year",
-					font: {
-						size: window.innerWidth < 768 ? 6 : 14,
-						color: "white",
-						family: "Futura PT Ligt, Futura PT, Futura Std",
-						weight: "lighter",
-					},
-					color: "white",
-				},
-				ticks: {
-					color: "white",
-					font: {
-						size: window.innerWidth < 768 ? 6 : 10,
-						family: "Futura PT Ligt, Futura PT, Futura Std",
-						color: "white",
-						weight: "lighter",
-					},
-				},
-			},
-			y: {
-				title: {
-					display: true,
-					text: "Number of Seismic Events",
-					font: {
-						size: window.innerWidth < 768 ? 6 : 14,
-						family: "Futura PT Ligt, Futura PT, Futura Std",
-						weight: "lighter",
-					},
-					color: "white",
-				},
-				ticks: {
-					color: "white",
-					font: {
-						size: window.innerWidth < 768 ? 6 : 10,
-						family: "Futura PT Ligt, Futura PT, Futura Std",
-						color: "white",
-					},
-				},
-			},
-		},
-		plugins: {
-			legend: false,
-			tooltip: {
-				enabled: true,
-				displayColors: false,
-				usePointStyle: true,
-				titleFont: {
-					size: 20,
-					family: "Futura PT Ligt, Futura PT, Futura Std",
-					weight: "lighter",
-					color: "white",
-				},
-				bodyFont: {
-					size: 16,
-					family: "Futura PT Ligt, Futura PT, Futura Std",
-					weight: "lighter",
-					color: "white",
-				},
-				footerFont: {
-					size: 14,
-					family: "Futura PT Ligt, Futura PT, Futura Std",
-					weight: "lighter",
-					color: "white",
-				},
-			},
-		},
-	};
+	const size = window.innerWidth < 800 ? 20 : 34;
 
 	return (
 		<div
 			className={`${styles["chart"]} ${
 				viewTimeSeriesData.on ? styles["show"] : ""
 			}`}>
-			<div className={styles["chart-container"]}>
-				<Line data={chartData} options={chartOptions} />
-			</div>
+			<ResponsiveContainer height="100%" width="100%">
+				<LineChart width={800} height={800} data={years}>
+					<CartesianGrid stroke="#e9e6e6" strokeWidth={0.3} />
+					<XAxis
+						dataKey="year"
+						height={size}
+						stroke="#e9e6e6"
+						strokeWidth={0.3}
+						className={styles["axis-label"]}
+						tick={{ fill: "white" }}>
+						<Label
+							className={styles["axis-label"]}
+							value="Year"
+							offset={-2}
+							position="insideBottom"
+						/>
+					</XAxis>
+					<YAxis
+						width={size + 2}
+						className={styles["axis-label"]}
+						stroke="#e9e6e6"
+						strokeWidth={0.3}
+						tick={{ fill: "white" }}>
+						<Label
+							className={styles["axis-label"]}
+							value="Number of Seismic Events"
+							angle={-90}
+							offset={window.innerWidth < 800 ? 4 : 10}
+							position="insideBottomLeft"
+						/>
+					</YAxis>
+					<Tooltip
+						contentStyle={{
+							backgroundColor: "rgba(0, 0, 0, 0.8)",
+							borderTop: "none",
+							borderLeft: "none",
+							borderRight: "none",
+							borderBottom: "2px solid #e9e6e6",
+							borderRadius: "0",
+							backdropFilter: "blur(3px)",
+						}}
+						labelStyle={{
+							color: "white",
+							fontFamily:
+								"Futura PT Light, Futura PT, Futura Std",
+							fontWeight: "lighter",
+						}}
+						itemStyle={{
+							color: "white",
+							fontFamily:
+								"Futura PT Light, Futura PT, Futura Std",
+							fontWeight: "lighter",
+						}}
+					/>
+					{lines.map((type) => (
+						<Line
+							key={type}
+							type="monotone"
+							dataKey={type}
+							stroke={dataTypeColors[type]}
+							dot={false}
+						/>
+					))}
+				</LineChart>
+			</ResponsiveContainer>
 		</div>
 	);
 };

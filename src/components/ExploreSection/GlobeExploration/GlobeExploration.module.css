@@ -12,13 +12,13 @@
 	margin-left: 4vw;
 	margin-right: 4vw;
 	width: 92vw;
-	padding-top: 168px;
+	padding-top: 112px;
 	position: relative;
-	align-self: start;
-	justify-self: start;
+	align-self: flex-start;
+	justify-self: flex-start;
 	display: flex;
 	justify-content: space-between;
-	align-items: start;
+	align-items: flex-start;
 	pointer-events: none;
 }
 

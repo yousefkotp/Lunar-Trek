@@ -1,47 +1,20 @@
 .chart {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	color: white;
-	width: 27%;
+	color: white !important;
+	width: 40%;
 	height: 300px;
 	border: 2px solid #e9e6e6;
 	border-radius: 0 !important;
 	outline: none;
 	background-color: rgba(124, 124, 124, 0.486);
-	margin-bottom: 10px;
 	opacity: 0;
 	transform: translateY(-50%);
 	transition: all 1s ease;
-	font-size: 1.2rem;
-	font-weight: 300;
 	backdrop-filter: blur(3px);
-}
-
-.chart h2 {
-	margin: 10px 0 0 15px;
-	font-weight: 300 !important;
-	font-size: 1.5rem;
-	transition: all 1s ease;
-}
-
-.chart p {
-	margin: 10px 0 0 20px;
-	font-weight: 300 !important;
-	font-size: 1.25rem;
-	transition: all 1s ease;
-}
-
-.chart-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	padding: 10px 10px 10px 5px;
-	height: 90%;
+	padding: 6px;
 }
 
 .show {
@@ -51,49 +24,42 @@
 	z-index: 9;
 }
 
-@media (max-width: 990px) {
-	.legend {
-		width: 40%;
-	}
+.axis-label {
+	fill: white;
+	font-family: "Futura PT Light", "Futura PT", "Futura Std";
+	font-weight: lighter;
+}
 
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+	.axis-label {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 480px) {
+	.axis-label {
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 990px) {
 	.chart {
 		height: 200px;
+		padding: 4px;
 	}
 }
 
 @media (max-width: 768px) {
 	.chart {
-		width: 35%;
-	}
-
-	.chart-legend {
-		flex-wrap: wrap;
-		font-size: 0.5rem;
-		line-height: 0.5rem;
-	}
-
-	.chart h2 {
-		font-size: 0.8rem;
-		margin: 8.5px 0 0 7.5px;
-	}
-
-	.chart p {
-		font-size: 0.5rem;
-		margin: 7.5px 0 0 7.5px;
+		width: 60%;
 	}
 }
 
 @media (max-width: 500px) {
 	.chart {
-		width: 40%;
-		height: 150px;
-	}
-
-	.legend {
-		width: 100%;
-	}
-
-	.chart-container {
-		height: 100%;
+		width: 68%;
+		height: 145px;
+		padding: 2px;
 	}
 }
