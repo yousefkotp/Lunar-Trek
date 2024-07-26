@@ -146,24 +146,6 @@ const TimeSeriesChart = (props) => {
 			className={`${styles["chart"]} ${
 				viewTimeSeriesData.on ? styles["show"] : ""
 			}`}>
-			<div className={styles["chart-legend"]}>
-				<div className={styles["legend"]}>
-					<label className="text-light">Shallow Moonquakes</label>
-					<div className={styles["shallow-legend"]} />
-				</div>
-				<div className={styles["legend"]}>
-					<label className="text-light">Deep Moonquakes</label>
-					<div className={styles["deep-legend"]} />
-				</div>
-				<div className={styles["legend"]}>
-					<label className="text-light">Meteorite Impacts</label>
-					<div className={styles["meteorite-legend"]} />
-				</div>
-				<div className={styles["legend"]}>
-					<label className="text-light">Artificial Impacts</label>
-					<div className={styles["artificial-legend"]} />
-				</div>
-			</div>
 			<div className={styles["chart-container"]}>
 				<Line data={chartData} options={chartOptions} />
 			</div>

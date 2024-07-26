@@ -1,11 +1,9 @@
 .information-box {
 	position: absolute;
-	top: 15%;
-	right: 15px;
+	right: 0;
 	background-color: rgba(124, 124, 124, 0.486);
-	width: 25%;
+	width: 27%;
 	height: fit-content;
-	margin: 2%;
 	opacity: 0;
 	transform: translateY(50%);
 	transition: all 1s ease;
@@ -39,6 +37,7 @@
 }
 
 .animate {
+	pointer-events: auto !important;
 	opacity: 1 !important;
 	transform: translateY(0) !important;
 	z-index: 10;
@@ -48,8 +47,7 @@
 @media (max-width: 768px) {
 	.information-box {
 		width: 30%;
-		right: 10px;
-		top: 19%;
+		/* right: 3%; */
 	}
 
 	.information-box h2 {

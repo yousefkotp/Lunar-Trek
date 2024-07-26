@@ -34,6 +34,8 @@ const GlobeExploration = () => {
 						landingSiteData={landingSiteData}
 					/>
 				</Canvas>
+			</div>
+			<div className={`${styles["ui-container"]}`}>
 				<ExplorationMenu
 					nakamura1979MoonquakeData={nakamura1979MoonquakeData}
 					lognonne2003MoonquakeData={lognonne2003MoonquakeData}
