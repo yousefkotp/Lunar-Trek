@@ -45,12 +45,18 @@
 	text-align: center;
 }
 
-.unreal-video {
+.unreal-video-container {
 	opacity: 0;
 	transition: all 2s ease;
+	aspect-ratio: 16 / 9 !important;
+	background-color: black;
 }
 
-.animate-unreal-video {
+.unreal-video {
+	object-fit: contain;
+}
+
+.animate-unreal-video-container {
 	opacity: 1 !important;
 }
 

@@ -6,8 +6,14 @@ import { Link } from "react-router-dom";
 const UnrealEngineExploration = () => {
 	const intro1Ref = useAnimate(styles["animate-unreal-intro"], false);
 	const intro2Ref = useAnimate(styles["animate-unreal-intro"], false);
-	const video1Ref = useAnimate(styles["animate-unreal-video"], false);
-	const video2Ref = useAnimate(styles["animate-unreal-video"], false);
+	const video1Ref = useAnimate(
+		styles["animate-unreal-video-container"],
+		false
+	);
+	const video2Ref = useAnimate(
+		styles["animate-unreal-video-container"],
+		false
+	);
 	const linkRef = useAnimate(styles["animate-unreal-link"], false);
 	return (
 		<section>
@@ -36,21 +42,22 @@ const UnrealEngineExploration = () => {
 						<hr />
 						<div
 							ref={video1Ref}
-							className={`ratio ratio-16x9 ${styles["unreal-video"]}`}>
-							<iframe
+							className={styles["unreal-video-container"]}>
+							<video
 								width="100%"
-								src="https://www.youtube.com/embed/4sWguPqmPUs?autoplay=1&mute=1"
+								height="100%"
+								className={styles["unreal-video"]}
 								title="Lunar Trek - First Person View"
-								allow="
-								accelerometer;
-								autoplay;
-								clipboard-write;
-								encrypted-media;
-								gyroscope;
-								picture-in-picture;
-								web-share"
-								allowFullScreen
-							/>
+								autoPlay
+								muted
+								loop
+								playsInline
+								controls>
+								<source
+									src="/assets/videos/Lunar Trek - First Person View.mp4"
+									type="video/mp4"
+								/>
+							</video>
 						</div>
 					</div>
 				</div>
@@ -81,21 +88,22 @@ const UnrealEngineExploration = () => {
 						<hr />
 						<div
 							ref={video2Ref}
-							className={`ratio ratio-16x9 ${styles["unreal-video"]}`}>
-							<iframe
+							className={styles["unreal-video-container"]}>
+							<video
 								width="100%"
-								src="https://www.youtube.com/embed/ooN5-kH8U6A?autoplay=1&mute=1"
+								height="100%"
+								className={styles["unreal-video"]}
 								title="Lunar Trek - Third Person View"
-								allow="
-								accelerometer;
-								autoplay;
-								clipboard-write;
-								encrypted-media;
-								gyroscope;
-								picture-in-picture;
-								web-share"
-								allowFullScreen
-							/>
+								autoPlay
+								muted
+								loop
+								playsInline
+								controls>
+								<source
+									src="/assets/videos/Lunar Trek - Third Person View.mp4"
+									type="video/mp4"
+								/>
+							</video>
 						</div>
 						<hr />
 						<Link

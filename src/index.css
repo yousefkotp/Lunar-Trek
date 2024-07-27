@@ -3,7 +3,8 @@
 
 @font-face {
 	font-family: "Futura PT Light";
-	src: url("./assets/fonts/Futura PT/FuturaPTLight.otf") format("opentype");
+	src: url("/public/assets/fonts/Futura PT/FuturaPTLight.otf")
+		format("opentype");
 }
 
 body {

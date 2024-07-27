@@ -28,21 +28,14 @@ const Moon = () => {
 export default Moon;
 
 // const Moon = () => {
-// 	const moonGLTF = useLoader(GLTFLoader, "/assets/Moon_1_3474.glb");
+// 	const moonGLTF = useLoader(GLTFLoader, "/assets/scenes/Moon_1_3474.glb");
 // 	const topographyTexture = useLoader(TextureLoader, topography);
 // 	const moon = moonGLTF.scene;
-// 	const dataContext = useContext(DataContext);
 // 	const geometry = new SphereGeometry(2, 64, 64, -Math.PI / 2);
 // 	const material = new MeshStandardMaterial({ map: topographyTexture });
 // 	const topographySphere = new Mesh(geometry, material);
 
-// 	const [topographicView, setTopographicView] = useState(
-// 		dataContext.topographicView
-// 	);
-
-// 	useEffect(() => {
-// 		setTopographicView(dataContext.topographicView);
-// 	}, [dataContext.topographicView]);
+// 	const topographicView = useSelector((state) => state.data.topographicView);
 
 // 	return (
 // 		<primitive
@@ -53,3 +46,5 @@ export default Moon;
 // 		/>
 // 	);
 // };
+
+// export default Moon;
