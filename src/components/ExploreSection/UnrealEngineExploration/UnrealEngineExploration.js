@@ -43,21 +43,22 @@ const UnrealEngineExploration = () => {
 						<div
 							ref={video1Ref}
 							className={styles["unreal-video-container"]}>
-							<video
+							<iframe
 								width="100%"
+								src="https://www.youtube.com/embed/4sWguPqmPUs?autoplay=1&mute=1"
 								height="100%"
 								className={styles["unreal-video"]}
 								title="Lunar Trek - First Person View"
-								autoPlay
-								muted
-								loop
-								playsInline
-								controls>
-								<source
-									src="/assets/videos/Lunar Trek - First Person View.mp4"
-									type="video/mp4"
-								/>
-							</video>
+								allow="
+								accelerometer;
+								autoplay;
+								clipboard-write;
+								encrypted-media;
+								gyroscope;
+								picture-in-picture;
+								web-share"
+								allowFullScreen
+							/>
 						</div>
 					</div>
 				</div>
@@ -89,21 +90,22 @@ const UnrealEngineExploration = () => {
 						<div
 							ref={video2Ref}
 							className={styles["unreal-video-container"]}>
-							<video
+							<iframe
 								width="100%"
+								src="https://www.youtube.com/embed/ooN5-kH8U6A?autoplay=1&mute=1"
 								height="100%"
 								className={styles["unreal-video"]}
 								title="Lunar Trek - Third Person View"
-								autoPlay
-								muted
-								loop
-								playsInline
-								controls>
-								<source
-									src="/assets/videos/Lunar Trek - Third Person View.mp4"
-									type="video/mp4"
-								/>
-							</video>
+								allow="
+								accelerometer;
+								autoplay;
+								clipboard-write;
+								encrypted-media;
+								gyroscope;
+								picture-in-picture;
+								web-share"
+								allowFullScreen
+							/>
 						</div>
 						<hr />
 						<Link
