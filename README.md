@@ -7,7 +7,16 @@ The official award-winning repository for NASA Space Apps 2023 Lunar Trek, a web
 </div>
 
 ## Table of Contents
-
+- [Lunar Trek](#lunar-trek)
+  * [Table of Contents](#table-of-contents)
+  * [Overview](#overview)
+  * [Features](#features)
+  * [Technologies Used](#technologies-used)
+  * [Time Series Analysis](#time-series-analysis)
+  * [Lunar Trek: The Game](#lunar-trek--the-game)
+  * [Use of Artificial Intelligence](#use-of-artificial-intelligence)
+  * [Contributors](#contributors)
+  
 ## Overview
 Our proposed solution addresses the challenge of visualizing lunar seismic data left behind by NASA's Apollo missions (Make a Moonquake Map 2.0!). We aim to create an engaging and informative experience for the public to understand and visualize seismic data through two interconnected components: a full-stack website and an immersive interactive game using Unreal Engine 5. The website will serve as a hub for users to explore lunar seismic data. It features an interactive 3D digital moon globe, where seismic events, including moonquake positions, can be visualized as pins. Users have access to time series analysis of moonquakes, helping them identify patterns and trends. In addition, informative content about moonquakes, differentiating them from earthquakes, are available to educate and engage users. The immersive game, powered by Unreal Engine 5, takes users to the lunar surface for a realistic moonquake experience. Users navigate the moon's terrain, experiencing the seismic events in real-time, and gain a deeper understanding of lunar seismic activity. This cutting-edge technology provides a visually stunning and engaging platform for users to interact with the moon's seismic data. Our solution addresses the challenge's requirements effectively. The website offers an intuitive interface for data exploration and analysis, making it accessible to a broad audience. The Unreal Engine 5-based game takes user engagement to the next level, allowing users to experience moonquakes firsthand. This multi-faceted approach caters to different learning styles and ensures that users gain a comprehensive understanding of lunar seismic activity.
 
